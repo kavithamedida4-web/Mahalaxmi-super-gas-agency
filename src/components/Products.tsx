@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -20,6 +20,9 @@ interface ProductShowcaseItem {
 }
 
 export const Products: React.FC = () => {
+  const [activeSlide, setActiveSlide] = useState<number>(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   const showcaseProducts: ProductShowcaseItem[] = [
     {
       id: 'gas-stoves-bhattis',
@@ -47,6 +50,31 @@ export const Products: React.FC = () => {
     },
   ];
 
+  const handleScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const scrollLeft = el.scrollLeft;
+    const cards = el.querySelectorAll<HTMLElement>('.product-ref-card');
+    if (cards.length > 0) {
+      const cardWidth = cards[0].offsetWidth + 18; // width + gap
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      const clamped = Math.max(0, Math.min(showcaseProducts.length - 1, newIndex));
+      if (clamped !== activeSlide) {
+        setActiveSlide(clamped);
+      }
+    }
+  };
+
+  const scrollToSlide = (index: number) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cards = el.querySelectorAll<HTMLElement>('.product-ref-card');
+    if (cards[index]) {
+      cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      setActiveSlide(index);
+    }
+  };
+
   return (
     <section className="section-padding products-section-ref" id="products">
       <div className="container">
@@ -62,8 +90,12 @@ export const Products: React.FC = () => {
           </h2>
         </div>
 
-        {/* 3 Showcase Product Cards matching User Reference Design */}
-        <div className="product-ref-grid">
+        {/* 3 Showcase Product Cards matching User Reference Design with Horizontal Scroll on Mobile */}
+        <div 
+          ref={scrollRef}
+          className="product-ref-grid"
+          onScroll={handleScroll}
+        >
           {showcaseProducts.map((product) => {
             const Icon = product.icon;
 
@@ -116,6 +148,22 @@ export const Products: React.FC = () => {
               </Link>
             );
           })}
+        </div>
+
+        {/* Mobile Swipe Indicators & Dots */}
+        <div className="product-ref-mobile-dots" aria-label="Products carousel navigation">
+          {showcaseProducts.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              className={`product-ref-dot ${activeSlide === i ? 'active' : ''}`}
+              onClick={() => scrollToSlide(i)}
+              aria-label={`Go to product ${i + 1}`}
+            />
+          ))}
+          <span className="product-ref-swipe-hint">
+            Swipe <span>→</span>
+          </span>
         </div>
 
         {/* View Full Products Page Button */}

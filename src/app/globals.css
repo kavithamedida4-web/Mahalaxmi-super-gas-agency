@@ -2780,6 +2780,10 @@ h1, h2, h3 {
   text-decoration: none;
 }
 
+.product-ref-mobile-dots {
+  display: none;
+}
+
 @media (max-width: 980px) {
   .product-ref-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2787,15 +2791,114 @@ h1, h2, h3 {
   }
 }
 
-@media (max-width: 680px) {
-  .product-ref-grid {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
+@media (max-width: 768px) {
   .product-ref-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Horizontal Scroll Carousel on Mobile */
+  .product-ref-grid {
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: none;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.15rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.35rem;
+    padding-bottom: 1.25rem;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  .product-ref-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+
+  .product-ref-card {
+    flex: 0 0 84%;
+    width: 84%;
+    min-width: 280px;
+    max-width: 330px;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    transition: transform 0.25s ease;
+  }
+
+  .product-ref-card:hover {
+    transform: none; /* Prevent sticky hover jumps on touch devices */
+  }
+
+  .product-ref-card:hover .product-ref-img {
+    transform: none;
+  }
+
+  .product-ref-card:last-child {
+    margin-right: 0.25rem;
+  }
+
+  /* Mobile Dots & Swipe Indicator */
+  .product-ref-mobile-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: 0.5rem;
+  }
+
+  .product-ref-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: #cbd5e1;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .product-ref-dot.active {
+    width: 24px;
+    background-color: var(--brand-orange);
+    box-shadow: 0 2px 6px rgba(220, 38, 38, 0.35);
+  }
+
+  .product-ref-swipe-hint {
+    margin-left: 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .product-ref-swipe-hint span {
+    color: var(--brand-orange);
+    font-weight: 800;
+  }
+
+  .product-ref-footer-row {
+    margin-top: 1.75rem;
   }
 }
+
+@media (max-width: 480px) {
+  .product-ref-card {
+    flex: 0 0 85%;
+    width: 85%;
+    min-width: 270px;
+  }
+}
+
 
 /* ==========================================================================
    BEST SELLERS / E-COMMERCE PRODUCT CARD DESIGN (Matching Reference Image)
