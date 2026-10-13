@@ -1,0 +1,160 @@
+'use client';
+
+import React, { useRef, useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
+import { SubServiceItem } from '@/config/businessData';
+
+interface SubservicesScrollSectionProps {
+  subServices: SubServiceItem[];
+  defaultImage: string;
+}
+
+export const SubservicesScrollSection: React.FC<SubservicesScrollSectionProps> = ({
+  subServices,
+  defaultImage,
+}) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const checkScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const { scrollLeft, scrollWidth, clientWidth } = el;
+    setCanScrollLeft(scrollLeft > 10);
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
+  }, []);
+
+  useEffect(() => {
+    checkScroll();
+    const el = scrollRef.current;
+    if (el) {
+      el.addEventListener('scroll', checkScroll, { passive: true });
+    }
+    window.addEventListener('resize', checkScroll);
+    return () => {
+      if (el) {
+        el.removeEventListener('scroll', checkScroll);
+      }
+      window.removeEventListener('resize', checkScroll);
+    };
+  }, [checkScroll, subServices]);
+
+  const handleScroll = (dir: 'left' | 'right') => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const scrollAmount = 340;
+    el.scrollBy({
+      left: dir === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth',
+    });
+  };
+
+  const isFew = subServices.length <= 2;
+
+  return (
+    <div className="subservices-horizontal-section">
+      {/* Scroll controls bar: Options count + Hint + Nav buttons */}
+      <div className="subservices-scroll-controls">
+        <div className="subservices-scroll-hint">
+          <span>{subServices.length} Options Available</span>
+          <span className="hint-divider">•</span>
+          <span className="hint-text">Scroll or swipe horizontally</span>
+        </div>
+
+        <div className="subservices-scroll-nav-btns">
+          <button
+            type="button"
+            className={`subservice-nav-btn ${!canScrollLeft ? 'disabled' : ''}`}
+            onClick={() => handleScroll('left')}
+            disabled={!canScrollLeft}
+            aria-label="Scroll left"
+            title="Scroll left"
+          >
+            <ChevronLeft size={18} strokeWidth={2.5} />
+          </button>
+          <button
+            type="button"
+            className={`subservice-nav-btn ${!canScrollRight ? 'disabled' : ''}`}
+            onClick={() => handleScroll('right')}
+            disabled={!canScrollRight}
+            aria-label="Scroll right"
+            title="Scroll right"
+          >
+            <ChevronRight size={18} strokeWidth={2.5} />
+          </button>
+        </div>
+      </div>
+
+      {/* Horizontal Scroll Track */}
+      <div
+        ref={scrollRef}
+        className={`subservices-scroll-track ${isFew ? 'center-few' : ''}`}
+      >
+        {subServices.map((sub) => {
+          const cardImg = sub.image || defaultImage || '/images/cylinder.jpg';
+          const displayPrice = sub.price || sub.badge || 'Available';
+          const badgeText = sub.discountBadge || sub.badge || null;
+
+          return (
+            <div
+              key={sub.id}
+              className="bestseller-card"
+              id={`subservice-card-${sub.id}`}
+            >
+              {/* 1. Square Image Wrap with Clean Studio Backdrop */}
+              <div className="bestseller-img-wrap">
+                <Image
+                  src={cardImg}
+                  alt={sub.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 300px"
+                  className="bestseller-img"
+                  style={{ objectFit: 'cover' }}
+                  unoptimized
+                />
+
+                {/* Bright Red Discount / Status Badge in Top-Right */}
+                {badgeText && (
+                  <span className="bestseller-badge">
+                    {badgeText}
+                  </span>
+                )}
+              </div>
+
+              {/* 2. Product Name & Bright Red Price Line */}
+              <div className="bestseller-info-row">
+                <h3 className="bestseller-title" title={sub.name}>
+                  {sub.name}
+                </h3>
+                <span className="bestseller-price">
+                  {displayPrice}
+                </span>
+              </div>
+
+              {/* 3. Subservice Description */}
+              {(sub.description || sub.tagline) && (
+                <p className="bestseller-desc" title={sub.description || sub.tagline}>
+                  {sub.description || sub.tagline}
+                </p>
+              )}
+
+              {/* 4. Full Width Bold Bright Red Button: BOOK NOW > */}
+              <Link
+                href="/contact"
+                className="bestseller-action-btn"
+                id={`subservice-book-now-${sub.id}`}
+                aria-label={`Book ${sub.name} on Contact page`}
+              >
+                <span>BOOK NOW</span>
+                <ChevronRight size={15} strokeWidth={2.8} />
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
