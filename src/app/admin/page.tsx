@@ -76,6 +76,26 @@ export default function AdminPage() {
   const [whatsAppNum, setWhatsAppNum] = useState<string>(BUSINESS_DATA.whatsAppNumber);
   const [saveSuccessMsg, setSaveSuccessMsg] = useState<string>('');
 
+  // Success Confirmation Popup Modal State
+  const [successPopup, setSuccessPopup] = useState<{
+    isOpen: boolean;
+    isNew: boolean;
+    title: string;
+    message: string;
+    product: ProductItem;
+  } | null>(null);
+
+  // Close success popup on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && successPopup?.isOpen) {
+        setSuccessPopup(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [successPopup]);
+
   // Search & Filter in Dashboard
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -387,9 +407,10 @@ export default function AdminPage() {
 
     if (editId) {
       // Update existing item
+      let savedProduct: ProductItem | null = null;
       const updated = products.map((item) => {
         if (item.id === editId) {
-          return {
+          savedProduct = {
             ...item,
             name: formName.trim(),
             category,
@@ -403,10 +424,21 @@ export default function AdminPage() {
             inStock: formInStock,
             whatsAppMessage: `Hello Sri Mahalakshmi Super Gas, I want to inquire about ${formName.trim()} (${categoryLabel}). Please share best price and availability.`,
           };
+          return savedProduct;
         }
         return item;
       });
       saveProductsToStorage(updated, `Product "${formName.trim()}" updated successfully!`);
+
+      if (savedProduct) {
+        setSuccessPopup({
+          isOpen: true,
+          isNew: false,
+          title: 'Product Updated Successfully!',
+          message: `Changes to "${formName.trim()}" have been saved and are immediately live on the website!`,
+          product: savedProduct,
+        });
+      }
     } else {
       // Add new item
       const newItem: ProductItem = {
@@ -425,6 +457,14 @@ export default function AdminPage() {
         whatsAppMessage: `Hello Sri Mahalakshmi Super Gas, I want to inquire about ${formName.trim()} (${categoryLabel}). Please share best price and availability.`,
       };
       saveProductsToStorage([newItem, ...products], `New product "${formName.trim()}" added to catalog!`);
+
+      setSuccessPopup({
+        isOpen: true,
+        isNew: true,
+        title: 'Product Added Successfully!',
+        message: `"${formName.trim()}" has been successfully added to your catalog and is live on the website!`,
+        product: newItem,
+      });
     }
 
     setIsEditing(false);
@@ -890,7 +930,7 @@ export default function AdminPage() {
                 style={{ background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)', display: 'inline-flex', alignItems: 'center', gap: 6 }}
               >
                 <Plus size={16} />
-                <span>+ Add New Product</span>
+                <span>Add New Product</span>
               </button>
               <button
                 type="button"
@@ -1287,6 +1327,114 @@ export default function AdminPage() {
 
                 </form>
 
+              </div>
+            </div>
+          )}
+
+          {/* Success Confirmation Popup Modal ("Product Added Successfully") */}
+          {successPopup && successPopup.isOpen && (
+            <div
+              className="admin-success-popup-overlay"
+              role="dialog"
+              aria-modal="true"
+              id="admin-success-popup-modal"
+              onClick={(e) => {
+                if (e.target === e.currentTarget) setSuccessPopup(null);
+              }}
+            >
+              <div className="admin-success-popup-card">
+                <button
+                  type="button"
+                  className="admin-success-popup-close"
+                  onClick={() => setSuccessPopup(null)}
+                  aria-label="Close popup"
+                  id="admin-success-popup-close-btn"
+                >
+                  <X size={18} />
+                </button>
+
+                <div className="admin-success-popup-icon-wrap">
+                  <CheckCircle2 size={42} strokeWidth={2.4} />
+                </div>
+
+                <h3 className="admin-success-popup-title" id="admin-success-popup-heading">
+                  {successPopup.title}
+                </h3>
+
+                <p className="admin-success-popup-msg">
+                  {successPopup.message}
+                </p>
+
+                {/* Preview card of the product */}
+                <div className="admin-success-popup-preview">
+                  <img
+                    src={successPopup.product.image || '/images/accessories.jpg'}
+                    alt={successPopup.product.name}
+                    className="admin-success-popup-img"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = '/images/accessories.jpg';
+                    }}
+                  />
+                  <div className="admin-success-popup-info">
+                    <div className="admin-success-popup-prod-name">
+                      {successPopup.product.name}
+                    </div>
+                    <div className="admin-success-popup-meta">
+                      {successPopup.product.categoryLabel && (
+                        <span className="admin-success-popup-badge cat">
+                          {successPopup.product.categoryLabel}
+                        </span>
+                      )}
+                      {(successPopup.product.price || successPopup.product.priceTag) && (
+                        <span className="admin-success-popup-badge price">
+                          {successPopup.product.price || successPopup.product.priceTag}
+                        </span>
+                      )}
+                      <span className="admin-success-popup-badge live">
+                        ● Live on Website
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="admin-success-popup-actions">
+                  <div className="admin-success-popup-btn-row">
+                    <Link
+                      href="/products"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="admin-success-popup-btn-primary"
+                      id="admin-popup-view-products-btn"
+                    >
+                      <span>View on Products Page</span>
+                      <ExternalLink size={15} />
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setSuccessPopup(null)}
+                      className="admin-success-popup-btn-secondary"
+                      id="admin-popup-done-btn"
+                    >
+                      Done
+                    </button>
+                  </div>
+
+                  {successPopup.isNew && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSuccessPopup(null);
+                        handleOpenAdd();
+                      }}
+                      className="admin-success-popup-add-another-btn"
+                      id="admin-popup-add-another-btn"
+                    >
+                      <Plus size={15} />
+                      <span>Add Another Product</span>
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           )}
