@@ -14808,282 +14808,93 @@ code {
 }
 
 /* ==========================================================================
-   ADMIN SUCCESS POPUP MODAL ("Product Added Successfully")
+   SMALL POPUP MESSAGE ("Product added successfully")
    ========================================================================== */
-.admin-success-popup-overlay {
+.admin-small-popup-toast {
   position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  top: 24px;
+  right: 24px;
+  z-index: 999999;
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 12px;
+  padding: 0.8rem 1.15rem;
+  box-shadow: 0 12px 32px -4px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(16, 185, 129, 0.25), 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid #10b981;
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 100050;
-  padding: 1.25rem;
-  animation: adminPopupFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  justify-content: space-between;
+  gap: 1.25rem;
+  max-width: 420px;
+  min-width: 280px;
+  pointer-events: auto;
+  animation: adminSmallPopupSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes adminPopupFadeIn {
+@keyframes adminSmallPopupSlideIn {
   from {
     opacity: 0;
+    transform: translateY(-16px) scale(0.96);
   }
   to {
     opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
-.admin-success-popup-card {
-  position: relative;
-  background: #ffffff;
-  width: 100%;
-  max-width: 480px;
-  border-radius: 22px;
-  padding: 2.25rem 2rem 1.85rem;
-  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e2e8f0;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: adminPopupZoomIn 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes adminPopupZoomIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.85) translateY(18px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.admin-success-popup-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: none;
-  background: #f1f5f9;
-  color: #64748b;
+.admin-small-popup-content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.15s ease;
+  gap: 0.75rem;
 }
 
-.admin-success-popup-close:hover {
-  background: #e2e8f0;
-  color: #0f172a;
-  transform: rotate(90deg);
-}
-
-.admin-success-popup-icon-wrap {
-  width: 76px;
-  height: 76px;
+.admin-small-popup-icon-wrap {
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: #ecfdf5;
   color: #059669;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.15rem;
-  box-shadow: 0 0 0 8px #f0fdf4, 0 0 0 16px rgba(240, 253, 244, 0.6);
-  animation: adminIconPulse 2s infinite ease-in-out;
-}
-
-@keyframes adminIconPulse {
-  0%, 100% {
-    box-shadow: 0 0 0 8px #f0fdf4, 0 0 0 16px rgba(240, 253, 244, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 0 12px #f0fdf4, 0 0 0 22px rgba(240, 253, 244, 0.3);
-  }
-}
-
-.admin-success-popup-title {
-  font-family: var(--font-heading);
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin: 0 0 0.5rem;
-  line-height: 1.25;
-}
-
-.admin-success-popup-msg {
-  font-size: 0.92rem;
-  color: #475569;
-  line-height: 1.5;
-  margin: 0 0 1.25rem;
-  max-width: 400px;
-}
-
-.admin-success-popup-preview {
-  width: 100%;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 0.85rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 1.5rem;
-  text-align: left;
-}
-
-.admin-success-popup-img {
-  width: 58px;
-  height: 52px;
-  object-fit: cover;
-  border-radius: 8px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
   flex-shrink: 0;
 }
 
-.admin-success-popup-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.admin-success-popup-prod-name {
+.admin-small-popup-text {
+  font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+  font-size: 0.94rem;
   font-weight: 700;
-  font-size: 0.95rem;
   color: #0f172a;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 0.25rem;
+  line-height: 1.3;
 }
 
-.admin-success-popup-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-}
-
-.admin-success-popup-badge {
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 0.2rem 0.55rem;
-  border-radius: 20px;
-}
-
-.admin-success-popup-badge.cat {
-  background: #eff6ff;
-  color: #2563eb;
-  border: 1px solid #dbeafe;
-}
-
-.admin-success-popup-badge.price {
-  background: #fef2f2;
-  color: #dc2626;
-  border: 1px solid #fee2e2;
-}
-
-.admin-success-popup-badge.live {
-  background: #f0fdf4;
-  color: #16a34a;
-  border: 1px solid #bbf7d0;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.admin-success-popup-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  width: 100%;
-}
-
-.admin-success-popup-btn-row {
-  display: flex;
-  gap: 0.65rem;
-  width: 100%;
-}
-
-.admin-success-popup-btn-primary {
-  flex: 1;
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  color: #ffffff !important;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.92rem;
-  padding: 0.75rem 1rem;
-  border-radius: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
-  transition: all 0.2s ease;
+.admin-small-popup-close-btn {
+  background: transparent;
   border: none;
+  color: #94a3b8;
   cursor: pointer;
-}
-
-.admin-success-popup-btn-primary:hover {
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(220, 38, 38, 0.45);
-  color: #ffffff !important;
-}
-
-.admin-success-popup-btn-secondary {
-  flex: 1;
-  background: #ffffff;
-  color: #334155;
-  border: 1.5px solid #cbd5e1;
-  font-weight: 700;
-  font-size: 0.92rem;
-  padding: 0.75rem 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.admin-success-popup-btn-secondary:hover {
-  background: #f1f5f9;
-  border-color: #94a3b8;
-  color: #0f172a;
-}
-
-.admin-success-popup-add-another-btn {
-  background: none;
-  border: none;
-  color: #dc2626;
-  font-size: 0.84rem;
-  font-weight: 700;
-  cursor: pointer;
-  padding: 0.4rem 0.65rem;
+  padding: 4px;
   border-radius: 6px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
-  transition: background 0.15s ease;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
 }
 
-.admin-success-popup-add-another-btn:hover {
-  background: #fef2f2;
-  text-decoration: underline;
+.admin-small-popup-close-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
 }
 
-@media (max-width: 480px) {
-  .admin-success-popup-card {
-    padding: 1.75rem 1.25rem 1.5rem;
-  }
-  .admin-success-popup-btn-row {
-    flex-direction: column;
-  }
-  .admin-success-popup-title {
-    font-size: 1.25rem;
+@media (max-width: 600px) {
+  .admin-small-popup-toast {
+    top: 16px;
+    right: 16px;
+    left: 16px;
+    max-width: none;
+    min-width: 0;
   }
 }
+
 
