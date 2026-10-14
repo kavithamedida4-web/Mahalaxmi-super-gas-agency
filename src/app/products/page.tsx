@@ -17,8 +17,27 @@ import {
 import { ProductsCatalogClient } from './ProductsCatalogClient';
 
 export const metadata: Metadata = {
-  title: `All Products & Spare Parts | Sri Mahalakshmi Super Gas Agency`,
-  description: `Browse authentic stoves, Supergas click-on regulators, wiremesh safety hose pipes, brass burners, knobs, and LPG cylinders with prompt doorstep delivery across Hyderabad. Direct WhatsApp ordering.`,
+  title: 'LPG Stoves & Spare Parts | Sri Mahalakshmi Super Gas',
+  description:
+    'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery from Sri Mahalakshmi Super Gas.',
+  alternates: {
+    canonical: '/products',
+  },
+  openGraph: {
+    title: 'LPG Stoves & Spare Parts | Sri Mahalakshmi Super Gas',
+    description:
+      'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery from Sri Mahalakshmi Super Gas.',
+    url: '/products',
+    type: 'website',
+    images: ['/images/stove.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LPG Stoves & Spare Parts | Sri Mahalakshmi Super Gas',
+    description:
+      'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery from Sri Mahalakshmi Super Gas.',
+    images: ['/images/stove.jpg'],
+  },
 };
 
 export default function ProductsPage() {

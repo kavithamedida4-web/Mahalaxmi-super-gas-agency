@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -8,7 +8,9 @@ import {
   Repeat,
   Wrench,
   MessageCircle,
-  ArrowRight
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { SERVICES, createWhatsAppLink } from '../config/businessData';
 
@@ -22,22 +24,42 @@ export const Services: React.FC = () => {
   // Card 0 is active by default (matching the reference image), and hover/scroll switches the active card
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [activeSlide, setActiveSlide] = useState<number>(0);
+  const [canScrollLeft, setCanScrollLeft] = useState<boolean>(false);
+  const [canScrollRight, setCanScrollRight] = useState<boolean>(true);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll = () => {
+  const checkScroll = useCallback(() => {
     const el = scrollRef.current;
     if (!el) return;
-    const scrollLeft = el.scrollLeft;
+    const { scrollLeft, scrollWidth, clientWidth } = el;
+    setCanScrollLeft(scrollLeft > 10);
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
+
     const cards = el.querySelectorAll<HTMLElement>('.service-arch-card');
     if (cards.length > 0) {
       const cardWidth = cards[0].offsetWidth + 18; // width + gap
       const newIndex = Math.round(scrollLeft / cardWidth);
       const clamped = Math.max(0, Math.min(SERVICES.length - 1, newIndex));
-      if (clamped !== activeSlide) {
-        setActiveSlide(clamped);
-      }
+      setActiveSlide(clamped);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    checkScroll();
+    const timer = setTimeout(checkScroll, 150);
+    const el = scrollRef.current;
+    if (el) {
+      el.addEventListener('scroll', checkScroll, { passive: true });
+    }
+    window.addEventListener('resize', checkScroll);
+    return () => {
+      clearTimeout(timer);
+      if (el) {
+        el.removeEventListener('scroll', checkScroll);
+      }
+      window.removeEventListener('resize', checkScroll);
+    };
+  }, [checkScroll]);
 
   const scrollToSlide = (index: number) => {
     const el = scrollRef.current;
@@ -46,6 +68,32 @@ export const Services: React.FC = () => {
     if (cards[index]) {
       cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
       setActiveSlide(index);
+    }
+  };
+
+  const handlePrev = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cards = el.querySelectorAll<HTMLElement>('.service-arch-card');
+    const target = Math.max(0, activeSlide - 1);
+    if (cards[target]) {
+      cards[target].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      setActiveSlide(target);
+    } else {
+      el.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  const handleNext = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cards = el.querySelectorAll<HTMLElement>('.service-arch-card');
+    const target = Math.min(SERVICES.length - 1, activeSlide + 1);
+    if (cards[target]) {
+      cards[target].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      setActiveSlide(target);
+    } else {
+      el.scrollBy({ left: 300, behavior: 'smooth' });
     }
   };
 
@@ -75,7 +123,6 @@ export const Services: React.FC = () => {
         <div 
           ref={scrollRef}
           className="service-arch-grid"
-          onScroll={handleScroll}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           {SERVICES.map((service, index) => {
@@ -157,20 +204,41 @@ export const Services: React.FC = () => {
           })}
         </div>
 
-        {/* Mobile Swipe Indicators & Dots */}
+        {/* Mobile Navigation with < > Arrows and Position Dots */}
         <div className="service-arch-mobile-dots" aria-label="Services carousel navigation">
-          {SERVICES.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              className={`service-arch-dot ${activeSlide === i ? 'active' : ''}`}
-              onClick={() => scrollToSlide(i)}
-              aria-label={`Go to service ${i + 1}`}
-            />
-          ))}
-          <span className="service-arch-swipe-hint">
-            Swipe <span>→</span>
-          </span>
+          <button
+            type="button"
+            className={`section-bottom-arrow ${!canScrollLeft ? 'disabled' : ''}`}
+            onClick={handlePrev}
+            disabled={!canScrollLeft}
+            aria-label="Previous service"
+            id="services-mobile-prev"
+          >
+            <ChevronLeft size={18} strokeWidth={2.6} />
+          </button>
+
+          <div className="service-arch-dots-group">
+            {SERVICES.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                className={`service-arch-dot ${activeSlide === i ? 'active' : ''}`}
+                onClick={() => scrollToSlide(i)}
+                aria-label={`Go to service ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className={`section-bottom-arrow ${!canScrollRight ? 'disabled' : ''}`}
+            onClick={handleNext}
+            disabled={!canScrollRight}
+            aria-label="Next service"
+            id="services-mobile-next"
+          >
+            <ChevronRight size={18} strokeWidth={2.6} />
+          </button>
         </div>
 
       </div>

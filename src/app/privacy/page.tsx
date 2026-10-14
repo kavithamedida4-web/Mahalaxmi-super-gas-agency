@@ -5,11 +5,22 @@ import { ShieldCheck, ArrowLeft, Phone, MessageCircle, Lock, Info, CheckCircle2 
 import { BUSINESS_DATA } from '@/config/businessData';
 
 export const metadata: Metadata = {
-  title: `Privacy & Contact Notice | ${BUSINESS_DATA.name}`,
-  description: 'Understand how phone calls, WhatsApp messages, and contact actions work on this local gas agency enquiry website.',
+  title: 'Privacy & Contact Policy | Sri Mahalakshmi Super Gas',
+  description:
+    'Read the privacy and visitor contact policy for Sri Mahalakshmi Super Gas Agency. Transparent details on phone calls, WhatsApp messages, and user privacy.',
+  alternates: {
+    canonical: '/privacy',
+  },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Privacy & Contact Policy | Sri Mahalakshmi Super Gas',
+    description:
+      'Read the privacy and visitor contact policy for Sri Mahalakshmi Super Gas Agency. Transparent details on phone calls, WhatsApp messages, and user privacy.',
+    url: '/privacy',
+    type: 'website',
   },
 };
 

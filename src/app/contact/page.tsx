@@ -5,13 +5,31 @@ import { ChevronRight } from 'lucide-react';
 import { FastBookingContactMap } from '@/components/FastBookingContactMap';
 
 export const metadata: Metadata = {
-  title: `Contact Us & Store Location | Sri Mahalakshmi Super Gas Agency`,
-  description: `Contact Sri Mahalakshmi Super Gas Agency in Gollaprolu. Call +91 9652009647 or WhatsApp for domestic LPG cylinder refills, new gas connections, stove servicing, and Google Maps directions.`,
+  title: 'Contact Sri Mahalakshmi Super Gas Agency | Store & Help',
+  description:
+    'Contact Sri Mahalakshmi Super Gas Agency in Gollaprolu. Call +91 9652009647 or WhatsApp for prompt LPG refills, new gas connections, and stove repair.',
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: 'Contact Sri Mahalakshmi Super Gas Agency | Store & Help',
+    description:
+      'Contact Sri Mahalakshmi Super Gas Agency in Gollaprolu. Call +91 9652009647 or WhatsApp for prompt LPG refills, new gas connections, and stove repair.',
+    url: '/contact',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Sri Mahalakshmi Super Gas Agency | Store & Help',
+    description:
+      'Contact Sri Mahalakshmi Super Gas Agency in Gollaprolu. Call +91 9652009647 or WhatsApp for prompt LPG refills, new gas connections, and stove repair.',
+  },
 };
 
 export default function ContactPage() {
   return (
     <main className="contact-page-root">
+      <h1 className="sr-only">Contact Sri Mahalakshmi Super Gas Agency</h1>
       {/* Breadcrumb Bar */}
       <div className="contact-breadcrumb-bar">
         <div className="container">

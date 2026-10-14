@@ -5,11 +5,22 @@ import { FileText, ArrowLeft, Phone, ShieldCheck, CheckCircle2 } from 'lucide-re
 import { BUSINESS_DATA } from '@/config/businessData';
 
 export const metadata: Metadata = {
-  title: `Terms of Service | ${BUSINESS_DATA.name}`,
-  description: `Operational terms and service conditions for domestic LPG cylinders, refill bookings, and gas stove repairs at ${BUSINESS_DATA.name}.`,
+  title: 'Terms of Service & Care | Sri Mahalakshmi Super Gas',
+  description:
+    'Review the operational terms and service guidelines for domestic LPG cylinders, refill delivery, and kitchen stove repairs at Sri Mahalakshmi Super Gas.',
+  alternates: {
+    canonical: '/terms',
+  },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Terms of Service & Care | Sri Mahalakshmi Super Gas',
+    description:
+      'Review the operational terms and service guidelines for domestic LPG cylinders, refill delivery, and kitchen stove repairs at Sri Mahalakshmi Super Gas.',
+    url: '/terms',
+    type: 'website',
   },
 };
 

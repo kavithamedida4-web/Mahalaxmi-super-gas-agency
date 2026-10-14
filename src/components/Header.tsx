@@ -5,19 +5,14 @@ import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
-  Phone,
   PhoneCall,
-  MessageCircle,
   Menu,
   X,
   Flame,
-  ChevronDown,
-  Shield
+  ChevronDown
 } from 'lucide-react';
 import {
-  BUSINESS_DATA,
-  createWhatsAppLink,
-  DEEP_LINKS
+  BUSINESS_DATA
 } from '../config/businessData';
 
 export const Header: React.FC = () => {
@@ -303,29 +298,15 @@ export const Header: React.FC = () => {
             </ul>
 
             <div className="mobile-menu-footer">
-              <p className="mobile-menu-note">
-                Open 7:00 AM – 10:00 PM • Delivery within 5 km
-              </p>
-              <div className="mobile-drawer-actions">
-                <a
-                  href={BUSINESS_DATA.primaryPhoneTel}
-                  className="btn btn-call w-full"
-                  onClick={closeMobileMenu}
-                >
-                  <Phone size={16} />
-                  <span>Call {BUSINESS_DATA.primaryPhone}</span>
-                </a>
-                <a
-                  href={DEEP_LINKS.general}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-whatsapp w-full"
-                  onClick={closeMobileMenu}
-                >
-                  <MessageCircle size={16} />
-                  <span>Message on WhatsApp</span>
-                </a>
-              </div>
+              <Link
+                href="/contact"
+                className="mobile-drawer-contact-btn"
+                onClick={closeMobileMenu}
+                id="mobile-drawer-contact-btn"
+              >
+                <PhoneCall size={18} />
+                <span>Contact Us</span>
+              </Link>
             </div>
           </div>
         </div>,

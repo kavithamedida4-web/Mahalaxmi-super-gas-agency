@@ -10,8 +10,27 @@ import {
 import { HowItWorks } from '@/components/HowItWorks';
 
 export const metadata: Metadata = {
-  title: `About Us | Sri Mahalakshmi Super Gas Agency`,
-  description: `Learn about Sri Mahalakshmi Super Gas Agency in Gollaprolu. Authorized Supergas agency for 100% verified weight domestic LPG cylinders, doorstep delivery, and ₹200 stove maintenance.`,
+  title: 'About Sri Mahalakshmi Super Gas Agency | LPG Agency',
+  description:
+    'Learn about Sri Mahalakshmi Super Gas Agency in Gollaprolu. Authorized Supergas agency for verified weight LPG cylinders, refills, and stove servicing.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About Sri Mahalakshmi Super Gas Agency | LPG Agency',
+    description:
+      'Learn about Sri Mahalakshmi Super Gas Agency in Gollaprolu. Authorized Supergas agency for verified weight LPG cylinders, refills, and stove servicing.',
+    url: '/about',
+    type: 'website',
+    images: ['/images/about_indian_delivery_clean.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Sri Mahalakshmi Super Gas Agency | LPG Agency',
+    description:
+      'Learn about Sri Mahalakshmi Super Gas Agency in Gollaprolu. Authorized Supergas agency for verified weight LPG cylinders, refills, and stove servicing.',
+    images: ['/images/about_indian_delivery_clean.jpg'],
+  },
 };
 
 export default function AboutPage() {

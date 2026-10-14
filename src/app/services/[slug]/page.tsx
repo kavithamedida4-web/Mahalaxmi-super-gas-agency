@@ -50,6 +50,27 @@ export function generateStaticParams() {
   }));
 }
 
+const SERVICE_SEO: Record<string, { title: string; description: string; image: string }> = {
+  'new-connection': {
+    title: 'New Gas Connection | Sri Mahalakshmi Super Gas Agency',
+    description:
+      'Apply for new single & double cylinder LPG connections with regulator and safety hose pipe from Sri Mahalakshmi Super Gas Agency. Fast doorstep delivery.',
+    image: '/images/services_brandblitz_new_connection.jpg',
+  },
+  'cylinder-refill': {
+    title: 'LPG Cylinder Refill | Sri Mahalakshmi Super Gas Agency',
+    description:
+      'Book genuine 14.2kg domestic & 19kg commercial LPG cylinder refills with tamper-evident seals and verified tare weight from Sri Mahalakshmi Super Gas.',
+    image: '/images/refill_domestic_14kg.jpg',
+  },
+  'stove-repair': {
+    title: 'Gas Stove Repair & Service | Sri Mahalakshmi Super Gas',
+    description:
+      'Doorstep gas stove repair & servicing in Gollaprolu with transparent ₹200 visit charge. Expert burner cleaning, leak detection, and genuine spare parts.',
+    image: '/images/indian_stove_repair_clean.jpg',
+  },
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -64,12 +85,30 @@ export async function generateMetadata({
     };
   }
 
+  const seo = SERVICE_SEO[slug] || {
+    title: `${service.title} | Sri Mahalakshmi Super Gas`,
+    description: `${service.subtitle}. Explore requirements and enquiry options for ${service.title} at Sri Mahalakshmi Super Gas Agency.`,
+    image: service.image,
+  };
+
   return {
-    title: `${service.title} & Subservices | ${BUSINESS_DATA.name}`,
-    description: `${service.subtitle}. Explore subservices, requirements, and WhatsApp enquiry options for ${service.title} at ${BUSINESS_DATA.name}.`,
+    title: seo.title,
+    description: seo.description,
+    alternates: {
+      canonical: `/services/${slug}`,
+    },
     openGraph: {
-      title: `${service.title} | ${BUSINESS_DATA.name}`,
-      description: service.description,
+      title: seo.title,
+      description: seo.description,
+      url: `/services/${slug}`,
+      type: 'website',
+      images: [seo.image],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seo.title,
+      description: seo.description,
+      images: [seo.image],
     },
   };
 }

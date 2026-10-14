@@ -18,23 +18,28 @@ export const SubservicesScrollSection: React.FC<SubservicesScrollSectionProps> =
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
 
   const checkScroll = useCallback(() => {
     const el = scrollRef.current;
     if (!el) return;
     const { scrollLeft, scrollWidth, clientWidth } = el;
-    setCanScrollLeft(scrollLeft > 10);
-    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
+    const overflow = scrollWidth > clientWidth + 4;
+    setHasOverflow(overflow);
+    setCanScrollLeft(scrollLeft > 8);
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 8);
   }, []);
 
   useEffect(() => {
     checkScroll();
+    const timer = setTimeout(checkScroll, 150);
     const el = scrollRef.current;
     if (el) {
       el.addEventListener('scroll', checkScroll, { passive: true });
     }
     window.addEventListener('resize', checkScroll);
     return () => {
+      clearTimeout(timer);
       if (el) {
         el.removeEventListener('scroll', checkScroll);
       }
@@ -53,40 +58,23 @@ export const SubservicesScrollSection: React.FC<SubservicesScrollSectionProps> =
   };
 
   const isFew = subServices.length <= 2;
+  const showControls = subServices.length > 1;
 
   return (
     <div className="subservices-horizontal-section">
-      {/* Scroll controls bar: Options count + Hint + Nav buttons */}
-      <div className="subservices-scroll-controls">
-        <div className="subservices-scroll-hint">
-          <span>{subServices.length} Options Available</span>
-          <span className="hint-divider">•</span>
-          <span className="hint-text">Scroll or swipe horizontally</span>
-        </div>
-
-        <div className="subservices-scroll-nav-btns">
-          <button
-            type="button"
-            className={`subservice-nav-btn ${!canScrollLeft ? 'disabled' : ''}`}
-            onClick={() => handleScroll('left')}
-            disabled={!canScrollLeft}
-            aria-label="Scroll left"
-            title="Scroll left"
-          >
-            <ChevronLeft size={18} strokeWidth={2.5} />
-          </button>
-          <button
-            type="button"
-            className={`subservice-nav-btn ${!canScrollRight ? 'disabled' : ''}`}
-            onClick={() => handleScroll('right')}
-            disabled={!canScrollRight}
-            aria-label="Scroll right"
-            title="Scroll right"
-          >
-            <ChevronRight size={18} strokeWidth={2.5} />
-          </button>
-        </div>
-      </div>
+      {/* Left Navigation Arrow (<) */}
+      {showControls && (
+        <button
+          type="button"
+          className={`subservices-slider-btn subservices-slider-btn-prev ${!canScrollLeft ? 'disabled' : ''}`}
+          onClick={() => handleScroll('left')}
+          disabled={!canScrollLeft}
+          aria-label="Previous service options"
+          title="Previous options"
+        >
+          <ChevronLeft size={22} strokeWidth={2.5} />
+        </button>
+      )}
 
       {/* Horizontal Scroll Track */}
       <div
@@ -155,6 +143,21 @@ export const SubservicesScrollSection: React.FC<SubservicesScrollSectionProps> =
           );
         })}
       </div>
+
+      {/* Right Navigation Arrow (>) */}
+      {showControls && (
+        <button
+          type="button"
+          className={`subservices-slider-btn subservices-slider-btn-next ${!canScrollRight ? 'disabled' : ''}`}
+          onClick={() => handleScroll('right')}
+          disabled={!canScrollRight}
+          aria-label="Next service options"
+          title="Next options"
+        >
+          <ChevronRight size={22} strokeWidth={2.5} />
+        </button>
+      )}
     </div>
   );
 };
+
