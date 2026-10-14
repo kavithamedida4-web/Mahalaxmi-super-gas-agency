@@ -176,7 +176,9 @@ h1, h2, h3 {
 }
 
 /* ==========================================================================
-   GLOBAL BIG HEADINGS: UNIFIED FONT WEIGHT 600, SAME SIZE, SAME FONT STYLE
+   GLOBAL BIG HEADINGS: STRICTLY UNIFIED FONT SIZE, WEIGHT 600, FONT STYLE
+   Guaranteed identical across Home Hero, Services, Products, About,
+   How It Works, Testimonials, Gallery, FAQ, Fast Booking, and Service Pages.
    ========================================================================== */
 .section-title,
 .hero-dvs-heading,
@@ -226,6 +228,28 @@ h1, h2, h3 {
   font-style: normal !important;
 }
 
+@media (max-width: 991px) {
+  .section-title,
+  .hero-dvs-heading,
+  .edustyle-hero-heading,
+  .why-choose-heading,
+  .service-hero-title,
+  .service-arch-h2,
+  .product-ref-title-main,
+  .boldman-title,
+  .hiw-compact-title,
+  .testimonial-ref-title,
+  .fast-booking-title,
+  .contact-hero-title,
+  .products-main-title,
+  .privacy-title,
+  .admin-title {
+    font-size: clamp(1.75rem, 4.5vw, 2.15rem) !important;
+    line-height: 1.18 !important;
+    font-weight: 600 !important;
+  }
+}
+
 @media (max-width: 768px) {
   .section-title,
   .hero-dvs-heading,
@@ -242,8 +266,31 @@ h1, h2, h3 {
   .products-main-title,
   .privacy-title,
   .admin-title {
-    font-size: clamp(1.6rem, 5.2vw, 1.95rem) !important;
+    font-size: clamp(1.55rem, 5vw, 1.85rem) !important;
     line-height: 1.18 !important;
+    font-weight: 600 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title,
+  .hero-dvs-heading,
+  .edustyle-hero-heading,
+  .why-choose-heading,
+  .service-hero-title,
+  .service-arch-h2,
+  .product-ref-title-main,
+  .boldman-title,
+  .hiw-compact-title,
+  .testimonial-ref-title,
+  .fast-booking-title,
+  .contact-hero-title,
+  .products-main-title,
+  .privacy-title,
+  .admin-title {
+    font-size: clamp(1.45rem, 5.2vw, 1.7rem) !important;
+    line-height: 1.18 !important;
+    font-weight: 600 !important;
   }
 }
 
@@ -1375,8 +1422,6 @@ h1, h2, h3 {
 
   /* Crisp high-contrast heading on transparent background */
   .hero-dvs-heading {
-    font-size: clamp(1.45rem, 5.2vw, 1.75rem);
-    line-height: 1.16;
     color: #0f172a;
     text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 16px rgba(255, 255, 255, 0.95);
     margin-bottom: 0.35rem;
@@ -2341,7 +2386,7 @@ h1, h2, h3 {
   }
 
   .service-arch-h2 {
-    font-size: clamp(1.65rem, 6vw, 2.15rem);
+    margin-bottom: 0.25rem;
   }
 
   /* Horizontal Scroll Carousel on Mobile */
@@ -4239,8 +4284,6 @@ h1, h2, h3 {
   }
 
   .hiw-compact-title {
-    font-size: 1.45rem;
-    line-height: 1.15;
     margin-bottom: 0.85rem;
   }
 
@@ -4306,7 +4349,7 @@ h1, h2, h3 {
   }
 
   .hiw-compact-title {
-    font-size: 1.25rem;
+    margin-bottom: 0.65rem;
   }
 
   .hiw-illustration-box {
@@ -6711,8 +6754,7 @@ code {
     grid-template-rows: 180px 180px;
   }
   .why-choose-heading {
-    font-size: clamp(1.6rem, 5.2vw, 1.95rem) !important;
-    line-height: 1.18 !important;
+    margin-bottom: 0.85rem;
   }
 }
 
@@ -7339,8 +7381,6 @@ code {
   }
 
   .edustyle-hero-heading {
-    font-size: clamp(1.6rem, 5.2vw, 1.95rem) !important;
-    line-height: 1.18 !important;
     margin-bottom: 1rem;
     text-align: center;
   }
@@ -12121,7 +12161,7 @@ code {
   }
 
   .fast-booking-title {
-    font-size: 1.45rem;
+    margin-bottom: 0.35rem;
   }
 
   .fast-booking-card {
@@ -12418,8 +12458,6 @@ code {
   }
 
   .boldman-title {
-    font-size: 1.85rem;
-    line-height: 1.25;
     margin-bottom: 0.9rem;
   }
 
@@ -12678,7 +12716,7 @@ code {
   }
 
   .testimonial-ref-title {
-    font-size: 1.85rem;
+    margin-bottom: 0.75rem;
   }
 
   .testimonial-carousel-wrapper {
@@ -14676,6 +14714,95 @@ code {
   }
 }
 
+/* ==========================================================================
+   FINAL CASCADE SAFETY OVERRIDE: 100% UNIFORM BIG HEADINGS
+   Guarantees that nothing later in stylesheet can alter heading font size/weight
+   ========================================================================== */
+.section-title,
+.hero-dvs-heading,
+.edustyle-hero-heading,
+.why-choose-heading,
+.service-hero-title,
+.service-arch-h2,
+.product-ref-title-main,
+.boldman-title,
+.hiw-compact-title,
+.testimonial-ref-title,
+.fast-booking-title,
+.contact-hero-title,
+.products-main-title,
+.privacy-title,
+.admin-title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2.05rem, 3.4vw, 2.75rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.02em !important;
+  font-style: normal !important;
+}
 
+@media (max-width: 991px) {
+  .section-title,
+  .hero-dvs-heading,
+  .edustyle-hero-heading,
+  .why-choose-heading,
+  .service-hero-title,
+  .service-arch-h2,
+  .product-ref-title-main,
+  .boldman-title,
+  .hiw-compact-title,
+  .testimonial-ref-title,
+  .fast-booking-title,
+  .contact-hero-title,
+  .products-main-title,
+  .privacy-title,
+  .admin-title {
+    font-size: clamp(1.75rem, 4.5vw, 2.15rem) !important;
+    line-height: 1.18 !important;
+    font-weight: 600 !important;
+  }
+}
 
+@media (max-width: 768px) {
+  .section-title,
+  .hero-dvs-heading,
+  .edustyle-hero-heading,
+  .why-choose-heading,
+  .service-hero-title,
+  .service-arch-h2,
+  .product-ref-title-main,
+  .boldman-title,
+  .hiw-compact-title,
+  .testimonial-ref-title,
+  .fast-booking-title,
+  .contact-hero-title,
+  .products-main-title,
+  .privacy-title,
+  .admin-title {
+    font-size: clamp(1.55rem, 5vw, 1.85rem) !important;
+    line-height: 1.18 !important;
+    font-weight: 600 !important;
+  }
+}
 
+@media (max-width: 480px) {
+  .section-title,
+  .hero-dvs-heading,
+  .edustyle-hero-heading,
+  .why-choose-heading,
+  .service-hero-title,
+  .service-arch-h2,
+  .product-ref-title-main,
+  .boldman-title,
+  .hiw-compact-title,
+  .testimonial-ref-title,
+  .fast-booking-title,
+  .contact-hero-title,
+  .products-main-title,
+  .privacy-title,
+  .admin-title {
+    font-size: clamp(1.45rem, 5.2vw, 1.7rem) !important;
+    line-height: 1.18 !important;
+    font-weight: 600 !important;
+  }
+}
