@@ -62,14 +62,15 @@ function mapProductItemToRow(item: ProductItem): Record<string, any> {
  */
 export async function getProductsFromSupabase(): Promise<ProductItem[]> {
   try {
-    // 1. Try dedicated public.products table
-    const { data: tableData, error: tableError } = await supabase
-      .from('products')
+    // 1. Try public.site_settings (key: 'products') - primary cloud store
+    const { data: settingsData, error: settingsError } = await supabase
+      .from('site_settings')
       .select('*')
-      .order('created_at', { ascending: true });
+      .eq('key', SITE_SETTINGS_KEY)
+      .maybeSingle();
 
-    if (!tableError && Array.isArray(tableData) && tableData.length > 0) {
-      const items = tableData.map(mapRowToProductItem);
+    if (!settingsError && settingsData?.value && Array.isArray(settingsData.value) && settingsData.value.length > 0) {
+      const items = settingsData.value as ProductItem[];
       // Cache locally
       try {
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(items));
@@ -79,21 +80,24 @@ export async function getProductsFromSupabase(): Promise<ProductItem[]> {
       return items;
     }
 
-    // 2. Try public.site_settings (key: 'products')
-    const { data: settingsData, error: settingsError } = await supabase
-      .from('site_settings')
-      .select('*')
-      .eq('key', SITE_SETTINGS_KEY)
-      .maybeSingle();
+    // 2. Try dedicated public.products table if it exists
+    try {
+      const { data: tableData, error: tableError } = await supabase
+        .from('products')
+        .select('*')
+        .order('created_at', { ascending: true });
 
-    if (!settingsError && settingsData?.value && Array.isArray(settingsData.value) && settingsData.value.length > 0) {
-      const items = settingsData.value as ProductItem[];
-      try {
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(items));
-      } catch {
-        // storage ignored
+      if (!tableError && Array.isArray(tableData) && tableData.length > 0) {
+        const items = tableData.map(mapRowToProductItem);
+        try {
+          localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(items));
+        } catch {
+          // storage ignored
+        }
+        return items;
       }
-      return items;
+    } catch {
+      // ignore
     }
 
     // 3. Fallback to localStorage if Supabase has not been seeded yet
@@ -136,6 +140,7 @@ export async function saveProductsToSupabase(
     if (typeof window !== 'undefined') {
       try {
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedList));
+        window.dispatchEvent(new CustomEvent('sri_products_updated', { detail: updatedList }));
       } catch {
         // ignore
       }

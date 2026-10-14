@@ -21,7 +21,20 @@ import { getProductsFromSupabase } from '@/lib/supabaseProducts';
 
 export const ProductsCatalogClient: React.FC = () => {
   const searchParams = useSearchParams();
-  const [products, setProducts] = useState<ProductItem[]>(PRODUCTS_CATALOG);
+  const [products, setProducts] = useState<ProductItem[]>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const stored = localStorage.getItem('sri_mahalaxmi_products');
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch {
+        // fallback
+      }
+    }
+    return PRODUCTS_CATALOG;
+  });
   const [activeTab, setActiveTab] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -37,25 +50,52 @@ export const ProductsCatalogClient: React.FC = () => {
     }
   }, [searchParams]);
 
-  // Sync with Supabase Cloud (with cache fallback)
+  // Sync with Supabase Cloud & Listen for Live Admin Updates
   useEffect(() => {
-    getProductsFromSupabase().then((items) => {
-      if (Array.isArray(items) && items.length > 0) {
-        setProducts(items);
-      }
-    }).catch(() => {
-      try {
-        const stored = localStorage.getItem('sri_mahalaxmi_products');
-        if (stored) {
-          const parsed = JSON.parse(stored);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            setProducts(parsed);
-          }
+    // 1. Immediately read cache
+    try {
+      const stored = localStorage.getItem('sri_mahalaxmi_products');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setProducts(parsed);
         }
-      } catch {
-        // Keep default catalog
       }
-    });
+    } catch {
+      // ignore
+    }
+
+    // 2. Refresh from Supabase Cloud
+    const refreshFromCloud = () => {
+      getProductsFromSupabase().then((items) => {
+        if (Array.isArray(items) && items.length > 0) {
+          setProducts(items);
+        }
+      }).catch(() => {
+        // Keep current products on error
+      });
+    };
+
+    refreshFromCloud();
+
+    // 3. Real-time sync when product is added/edited in admin or another tab
+    const handleProductsUpdated = (e?: any) => {
+      if (e?.detail && Array.isArray(e.detail) && e.detail.length > 0) {
+        setProducts(e.detail);
+      } else {
+        refreshFromCloud();
+      }
+    };
+
+    window.addEventListener('sri_products_updated', handleProductsUpdated);
+    window.addEventListener('storage', handleProductsUpdated);
+    window.addEventListener('focus', refreshFromCloud);
+
+    return () => {
+      window.removeEventListener('sri_products_updated', handleProductsUpdated);
+      window.removeEventListener('storage', handleProductsUpdated);
+      window.removeEventListener('focus', refreshFromCloud);
+    };
   }, []);
 
   const tabs = [
