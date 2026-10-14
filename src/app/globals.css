@@ -180,6 +180,9 @@ h1, h2, h3 {
    ========================================================================== */
 .section-title,
 .hero-dvs-heading,
+.edustyle-hero-heading,
+.why-choose-heading,
+.service-hero-title,
 .service-arch-h2,
 .product-ref-title-main,
 .boldman-title,
@@ -200,6 +203,9 @@ h1, h2, h3 {
 
 .section-title span,
 .hero-dvs-heading span,
+.edustyle-hero-heading span,
+.why-choose-heading span,
+.service-hero-title span,
 .service-arch-h2 span,
 .product-ref-title-main span,
 .boldman-title span,
@@ -211,6 +217,8 @@ h1, h2, h3 {
 .privacy-title span,
 .admin-title span,
 .hero-dvs-highlight,
+.edustyle-accent-heading,
+.why-heading-highlight,
 .title-highlight,
 .highlight-text {
   font-family: inherit !important;
@@ -221,6 +229,9 @@ h1, h2, h3 {
 @media (max-width: 768px) {
   .section-title,
   .hero-dvs-heading,
+  .edustyle-hero-heading,
+  .why-choose-heading,
+  .service-hero-title,
   .service-arch-h2,
   .product-ref-title-main,
   .boldman-title,
@@ -5798,12 +5809,13 @@ code {
 }
 
 .service-hero-title {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2.05rem, 3.4vw, 2.75rem) !important;
+  font-weight: 600 !important;
   color: var(--primary-950);
-  line-height: 1.18;
-  letter-spacing: -0.02em;
+  line-height: 1.18 !important;
+  letter-spacing: -0.02em !important;
+  font-style: normal !important;
   margin-bottom: 0.85rem;
 }
 
@@ -6576,16 +6588,21 @@ code {
 }
 
 .why-choose-heading {
-  font-family: var(--font-heading);
-  font-size: 2.35rem;
-  font-weight: 800;
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2.05rem, 3.4vw, 2.75rem) !important;
+  font-weight: 600 !important;
   color: var(--primary-950);
-  line-height: 1.22;
+  line-height: 1.18 !important;
+  letter-spacing: -0.02em !important;
+  font-style: normal !important;
   margin: 0 0 1.15rem 0;
 }
 
 .why-heading-highlight {
   color: #dc2626;
+  font-family: inherit !important;
+  font-weight: 600 !important;
+  font-style: normal !important;
 }
 
 .why-choose-desc {
@@ -6694,7 +6711,8 @@ code {
     grid-template-rows: 180px 180px;
   }
   .why-choose-heading {
-    font-size: 1.95rem;
+    font-size: clamp(1.6rem, 5.2vw, 1.95rem) !important;
+    line-height: 1.18 !important;
   }
 }
 
@@ -6975,17 +6993,21 @@ code {
 
 .edustyle-hero-heading {
   font-family: var(--font-heading) !important;
-  font-weight: 700 !important;
-  font-size: clamp(2.35rem, 4.3vw, 3.6rem) !important;
-  line-height: 1.15;
+  font-weight: 600 !important;
+  font-size: clamp(2.05rem, 3.4vw, 2.75rem) !important;
+  line-height: 1.18 !important;
   color: #0f172a;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em !important;
+  font-style: normal !important;
   margin-bottom: 1.35rem;
 }
 
 .edustyle-accent-heading {
   color: #dc2626;
   display: inline;
+  font-family: inherit !important;
+  font-weight: 600 !important;
+  font-style: normal !important;
 }
 
 .edustyle-hero-lead {
@@ -7317,8 +7339,8 @@ code {
   }
 
   .edustyle-hero-heading {
-    font-size: clamp(1.85rem, 7.2vw, 2.35rem) !important;
-    line-height: 1.18;
+    font-size: clamp(1.6rem, 5.2vw, 1.95rem) !important;
+    line-height: 1.18 !important;
     margin-bottom: 1rem;
     text-align: center;
   }
@@ -8197,7 +8219,8 @@ code {
 
 @media (max-width: 640px) {
   .service-hero-title {
-    font-size: 1.9rem;
+    font-size: clamp(1.6rem, 5.2vw, 1.95rem) !important;
+    line-height: 1.18 !important;
   }
   .service-hero-cta-row {
     flex-direction: column;
