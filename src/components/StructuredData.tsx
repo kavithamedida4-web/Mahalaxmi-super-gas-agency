@@ -11,13 +11,16 @@ export const StructuredData: React.FC = () => {
     name: BUSINESS_DATA.name,
     legalName: BUSINESS_DATA.name,
     alternateName: [
+      'Super Gas Agencies in Kondapur',
+      'SUPERGAS Agency in Kondapur, Hyderabad',
+      'SUPERGAS Gas Agency Kondapur',
+      'SUPERGAS LPG Distributor Kondapur',
+      'SUPERGAS Cylinder Booking in Kondapur',
+      'SUPERGAS Gas Delivery in Kondapur',
+      'SUPERGAS Agency Near Me',
+      'Super Gas Agency in Kondapur',
       'Gas Agency in Kondapur',
       'Gas Agency in Kodapur',
-      'Super Gas Agency in Kondapur',
-      'SUPERGAS Agency Kondapur Hyderabad',
-      'SUPERGAS Cylinder Booking in Kondapur',
-      'SUPERGAS LPG Gas Agency Kondapur',
-      'LPG Gas Agency in Kondapur',
       'Sri Mahalakshmi Super Gas Agency',
       'Mahalakshmi Super Gas Agency',
       'Sri Mahalakshmi Supergas',
@@ -32,7 +35,7 @@ export const StructuredData: React.FC = () => {
       `${baseUrl}/images/agency_counter.jpg`,
     ],
     description:
-      'Authorized SUPERGAS agency in Kondapur, Hyderabad providing domestic & commercial LPG cylinder booking, refills, new gas connections, safety accessories, and kitchen gas stove repairs.',
+      'Authorized SUPERGAS LPG distributor and gas agency in Kondapur, Hyderabad providing domestic & commercial cylinder booking, gas delivery, new connections, safety accessories, and stove repairs.',
     telephone: '+91-9652009647',
     email: 'contact@srimahalakshmisupergas.com',
     priceRange: '₹₹',
@@ -116,6 +119,15 @@ export const StructuredData: React.FC = () => {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
+            name: 'SUPERGAS Gas Delivery in Kondapur',
+            description:
+              'Doorstep LPG cylinder refill delivery across Kondapur and surrounding Hyderabad areas with prompt dispatch.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
             name: 'New SUPERGAS LPG Gas Connection in Kondapur',
             description:
               'Complete new domestic LPG gas connection packages in Kondapur with single/double cylinder, click-on safety regulator, wiremesh pipe, and doorstep installation.',
@@ -133,6 +145,12 @@ export const StructuredData: React.FC = () => {
       ],
     },
     knowsAbout: [
+      'Super Gas Agencies in Kondapur',
+      'SUPERGAS Gas Agency Kondapur',
+      'SUPERGAS LPG Distributor Kondapur',
+      'SUPERGAS Cylinder Booking in Kondapur',
+      'SUPERGAS Gas Delivery in Kondapur',
+      'SUPERGAS Agency Near Me',
       'Gas Agency in Kondapur',
       'Gas Agency in Kodapur',
       'Super Gas Agency in Kondapur',
@@ -155,15 +173,18 @@ export const StructuredData: React.FC = () => {
     url: baseUrl,
     name: BUSINESS_DATA.name,
     alternateName: [
+      'Super Gas Agencies in Kondapur',
+      'SUPERGAS Agency in Kondapur, Hyderabad',
+      'SUPERGAS Gas Agency Kondapur',
+      'SUPERGAS LPG Distributor Kondapur',
+      'SUPERGAS Cylinder Booking in Kondapur',
       'Gas Agency in Kondapur',
       'Gas Agency in Kodapur',
       'Super Gas Agency in Kondapur',
-      'SUPERGAS Agency Kondapur Hyderabad',
-      'SUPERGAS Cylinder Booking in Kondapur',
       'Sri Mahalakshmi Super Gas Agency',
     ],
     description:
-      'Authorized Super Gas Agency in Kondapur, Hyderabad. Fast domestic & commercial SUPERGAS cylinder booking, new LPG gas connections, and stove servicing portal.',
+      'Authorized SUPERGAS Gas Agency in Kondapur, Hyderabad. Fast domestic & commercial cylinder booking, new LPG gas connections, gas delivery & stove repairs.',
     publisher: {
       '@id': `${baseUrl}/#localbusiness`,
     },

@@ -12,13 +12,13 @@ import { HowItWorks } from '@/components/HowItWorks';
 export const metadata: Metadata = {
   title: 'About Super Gas Agency | Kondapur Hyderabad',
   description:
-    'Learn about Sri Mahalakshmi Super Gas Agency serving Kondapur & Hyderabad. Authorized SUPERGAS agency for verified tare weight LPG cylinders, refills, and stove servicing.',
+    'Learn about Sri Mahalakshmi Super Gas Agency serving Kondapur & Hyderabad. Authorized SUPERGAS LPG distributor for verified tare weight LPG cylinders & stove servicing.',
   keywords: [
     'About Super Gas Agency',
-    'Gas Agency in Kondapur',
-    'Gas Agency in Kodapur',
-    'Super Gas Agency in Kondapur',
-    'SUPERGAS Agency Kondapur Hyderabad',
+    'Super Gas Agencies in Kondapur',
+    'SUPERGAS Agency in Kondapur, Hyderabad',
+    'SUPERGAS LPG Distributor Kondapur',
+    'SUPERGAS Gas Agency Kondapur',
     'Sri Mahalakshmi Super Gas Agency',
     'LPG cylinder agency Hyderabad',
   ],
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Super Gas Agency | Kondapur Hyderabad',
     description:
-      'Learn about Sri Mahalakshmi Super Gas Agency serving Kondapur & Hyderabad. Authorized SUPERGAS agency for verified tare weight LPG cylinders, refills, and stove servicing.',
+      'Learn about Sri Mahalakshmi Super Gas Agency serving Kondapur & Hyderabad. Authorized SUPERGAS LPG distributor for verified tare weight LPG cylinders & stove servicing.',
     url: '/about',
     type: 'website',
     images: ['/images/about_indian_delivery_clean.jpg'],
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Super Gas Agency | Kondapur Hyderabad',
     description:
-      'Learn about Sri Mahalakshmi Super Gas Agency serving Kondapur & Hyderabad. Authorized SUPERGAS agency for verified tare weight LPG cylinders, refills, and stove servicing.',
+      'Learn about Sri Mahalakshmi Super Gas Agency serving Kondapur & Hyderabad. Authorized SUPERGAS LPG distributor for verified tare weight LPG cylinders & stove servicing.',
     images: ['/images/about_indian_delivery_clean.jpg'],
   },
 };

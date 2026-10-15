@@ -21,11 +21,14 @@ export const metadata: Metadata = {
   description:
     'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery across Kondapur, Hyderabad.',
   keywords: [
+    'Super Gas Agencies in Kondapur',
+    'SUPERGAS Gas Agency Kondapur',
+    'SUPERGAS Agency in Kondapur, Hyderabad',
     'LPG Stoves Kondapur',
     'Gas Agency in Kondapur',
     'Gas Agency in Kodapur',
     'Super Gas Agency in Kondapur',
-    'SUPERGAS Agency Kondapur Hyderabad',
+    'SUPERGAS Cylinder Booking in Kondapur',
     'Supergas click-on regulators Hyderabad',
     'gas stove spare parts Kondapur',
     'Sri Mahalakshmi Super Gas',

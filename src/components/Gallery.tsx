@@ -15,42 +15,42 @@ interface GalleryItem {
 
 const GALLERY_ITEMS_LEFT: GalleryItem[] = [
   {
-    id: 'counter',
-    title: 'Customer Service Counter',
-    category: 'Agency Desk',
-    image: '/images/agency_counter.jpg',
-    description: 'Walk-in customer consultation desk for domestic LPG bookings and new connection inquiries.',
+    id: 'storefront',
+    title: 'Authorized SUPERGAS Agency Storefront',
+    category: 'Agency & Storefront',
+    image: '/images/gallery_supergas_storefront.jpg',
+    description: 'Official Sri Mahalakshmi SUPERGAS agency storefront with walk-in customer booking desk and new connections in Kondapur.',
   },
   {
-    id: 'cylinders',
-    title: 'Domestic LPG Cylinders',
-    category: 'Cooking Gas',
-    image: '/images/cylinder.jpg',
-    description: 'Certified domestic red cooking gas cylinders stored with safety cap and seal intact.',
+    id: 'delivery-action',
+    title: 'Doorstep LPG Cylinder Delivery',
+    category: 'Prompt Gas Delivery',
+    image: '/images/gallery_cylinder_delivery_action.jpg',
+    description: 'Same-day doorstep LPG cylinder refill delivery across Kondapur with genuine safety seals and tare weight verification.',
   },
 ];
 
 const GALLERY_ITEMS_RIGHT: GalleryItem[] = [
   {
-    id: 'stoves',
-    title: 'High-Efficiency Gas Stoves',
-    category: 'Stoves & Cooktops',
-    image: '/images/stove.jpg',
-    description: 'Toughened glass top models with high-thermal efficiency solid brass burners.',
+    id: 'signboard',
+    title: 'Official SUPERGAS Signboard & Booking Desk',
+    category: 'Agency Desk',
+    image: '/images/gallery_supergas_signboard.jpg',
+    description: 'Official authorized agency board displaying new connections and booking hotlines: 9652009647 / 7993009647.',
   },
   {
-    id: 'accessories',
-    title: 'Certified Safety Accessories',
-    category: 'Safety Spares',
-    image: '/images/accessories.jpg',
-    description: 'ISI-approved domestic regulators, steel wire-braided safety rubber hoses, and cylinder trolleys.',
+    id: 'executive-front',
+    title: 'Verified Delivery Executive & Cylinders',
+    category: 'Safety & Delivery',
+    image: '/images/gallery_delivery_executive_front.jpg',
+    description: 'Trained delivery personnel equipped with certified domestic cylinders for prompt doorstep handoff in Kondapur.',
   },
   {
-    id: 'repairs',
-    title: 'Stove Maintenance & Servicing',
-    category: 'Expert Repairs',
-    image: '/images/repair.jpg',
-    description: 'Technical repair workbench for gas flame calibration, burner unclogging, and safety tests.',
+    id: 'bike-dispatch',
+    title: 'Rapid Cylinder Delivery Fleet',
+    category: 'Express Dispatch',
+    image: '/images/gallery_delivery_bike_dispatch.jpg',
+    description: 'Express LPG cylinder refill delivery vehicle ready for dispatch to homes and commercial kitchens.',
   },
 ];
 

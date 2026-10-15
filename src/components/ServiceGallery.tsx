@@ -26,7 +26,7 @@ const SERVICE_GALLERIES: Record<string, ServiceGalleryData> = {
     badge: 'New Connection Showcase',
     title: 'Our Connection & Installation Gallery',
     description:
-      'Take a look at our authorized domestic cylinders, toughened glass stoves, certified accessories, and doorstep setup in Gollaprolu.',
+      'Take a look at our authorized domestic cylinders, toughened glass stoves, certified accessories, and doorstep setup in Kondapur, Hyderabad.',
     leftItems: [
       {
         id: 'nc-1',
@@ -66,7 +66,7 @@ const SERVICE_GALLERIES: Record<string, ServiceGalleryData> = {
         id: 'nc-5',
         title: 'Doorstep Installation & Safety Demo',
         category: 'Doorstep Setup',
-        image: '/images/about_indian_delivery_clean.jpg',
+        image: '/images/gallery_delivery_bike_dispatch.jpg',
         description:
           'Certified delivery technician mounts the regulator, conducts thorough joint leak checks, and demonstrates safe flame ignition.',
       },
@@ -77,15 +77,15 @@ const SERVICE_GALLERIES: Record<string, ServiceGalleryData> = {
     badge: 'Cylinder Refill Showcase',
     title: 'Refill Delivery & Verification Gallery',
     description:
-      'Take a look at our tamper-evident sealed cylinders, digital tare weight verification, and doorstep delivery service across Gollaprolu.',
+      'Take a look at our tamper-evident sealed cylinders, digital tare weight verification, and doorstep delivery service across Kondapur, Hyderabad.',
     leftItems: [
       {
         id: 'rf-1',
         title: '30-Minute Priority Refill Delivery',
         category: 'Doorstep Delivery',
-        image: '/images/services_hero_delivery.jpg',
+        image: '/images/gallery_cylinder_delivery_action.jpg',
         description:
-          'Dedicated local delivery personnel carrying genuine sealed domestic cylinders directly to your kitchen within 5 km.',
+          'Dedicated local delivery personnel carrying genuine sealed domestic cylinders directly to your kitchen across Kondapur.',
       },
       {
         id: 'rf-2',
@@ -101,7 +101,7 @@ const SERVICE_GALLERIES: Record<string, ServiceGalleryData> = {
         id: 'rf-3',
         title: 'Doorstep Digital Tare Weight Check',
         category: 'Weight Verification',
-        image: '/images/about_indian_delivery_doorstep.jpg',
+        image: '/images/gallery_delivery_executive_front.jpg',
         description:
           'Every refill cylinder is verified on calibrated digital weighing scales at your doorstep to guarantee 100% accurate net cooking gas.',
       },

@@ -34,12 +34,44 @@ const CATEGORIES = [
 
 const GALLERY_ITEMS: GalleryItem[] = [
   {
-    id: 'agency-counter',
-    image: '/images/agency_counter.jpg',
+    id: 'supergas-storefront',
+    image: '/images/gallery_supergas_storefront.jpg',
     category: 'agency',
-    badge: 'AGENCY & STORE',
-    title: 'Customer Service & Booking Desk',
-    description: 'Walk-in customer consultation desk for domestic LPG bookings and new connection inquiries in Gollaprolu.',
+    badge: 'AGENCY & STOREFRONT',
+    title: 'Sri Mahalakshmi SUPERGAS Storefront',
+    description: 'Official SUPERGAS authorized agency premises with customer booking desk, new connection allottee support, and cylinder dispatch hub in Kondapur, Hyderabad.',
+  },
+  {
+    id: 'supergas-signboard',
+    image: '/images/gallery_supergas_signboard.jpg',
+    category: 'agency',
+    badge: 'AUTHORIZED BOARD',
+    title: 'Official SUPERGAS Signboard & Helpdesk',
+    description: 'Authorized agency board displaying domestic connections and official hotlines: 9652009647 / 7993009647 (Kondapur, Hyderabad 500084).',
+  },
+  {
+    id: 'cylinder-delivery-action',
+    image: '/images/gallery_cylinder_delivery_action.jpg',
+    category: 'domestic',
+    badge: 'DOORSTEP DELIVERY',
+    title: 'Express Doorstep Cylinder Delivery',
+    description: 'Same-day doorstep delivery executive transporting verified domestic LPG cylinders across Kondapur with safety seals intact.',
+  },
+  {
+    id: 'delivery-executive-front',
+    image: '/images/gallery_delivery_executive_front.jpg',
+    category: 'domestic',
+    badge: 'VERIFIED DELIVERY',
+    title: 'Authorized Delivery Executive & Cylinders',
+    description: 'Dedicated delivery personnel equipped with verified domestic and commercial red cooking gas cylinders ready for delivery.',
+  },
+  {
+    id: 'delivery-bike-dispatch',
+    image: '/images/gallery_delivery_bike_dispatch.jpg',
+    category: 'domestic',
+    badge: 'RAPID DISPATCH',
+    title: 'Rapid Cylinder Delivery Fleet in Transit',
+    description: 'Prompt on-demand domestic cylinder delivery to households, apartments, and commercial kitchens across Kondapur and surrounding areas.',
   },
   {
     id: 'cylinder-14kg',
@@ -152,14 +184,6 @@ const GALLERY_ITEMS: GalleryItem[] = [
     badge: 'REPAIR & SERVICE',
     title: 'Certified Stove Repair Workbench',
     description: 'Expert technician servicing for low flame, yellow soot, gas smell leaks, and valve maintenance.',
-  },
-  {
-    id: 'delivery-doorstep',
-    image: '/images/about_indian_delivery_doorstep.jpg',
-    category: 'domestic',
-    badge: 'DOORSTEP FLEET',
-    title: 'Safe Doorstep Delivery Fleet',
-    description: 'Trained delivery personnel ensuring safe cylinder installation and pre-delivery safety inspection.',
   },
 ];
 

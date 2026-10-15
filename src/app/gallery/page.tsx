@@ -8,11 +8,13 @@ export const metadata: Metadata = {
   description:
     'Browse photos of SUPERGAS agency operations, verified domestic & commercial LPG cylinders, safety regulators, stoves, and workbench in Kondapur, Hyderabad.',
   keywords: [
+    'Super Gas Agencies in Kondapur',
+    'SUPERGAS Agency in Kondapur, Hyderabad',
+    'SUPERGAS Gas Agency Kondapur',
     'Super Gas Agency Gallery',
     'Gas Agency in Kondapur',
     'Gas Agency in Kodapur',
     'Super Gas Agency in Kondapur',
-    'SUPERGAS Agency Kondapur Hyderabad',
     'LPG cylinders photos Hyderabad',
   ],
   alternates: {

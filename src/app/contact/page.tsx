@@ -5,33 +5,34 @@ import { ChevronRight } from 'lucide-react';
 import { FastBookingContactMap } from '@/components/FastBookingContactMap';
 
 export const metadata: Metadata = {
-  title: 'Contact Super Gas Agency Kondapur | Gas Agency Hyderabad',
+  title: 'Contact SUPERGAS Agency Kondapur | Gas Agency Hyderabad',
   description:
-    'Contact Sri Mahalakshmi Super Gas Agency in Kondapur, Hyderabad. Call +91 9652009647 or WhatsApp for prompt SUPERGAS cylinder booking, refills, and stove repairs.',
+    'Contact Sri Mahalakshmi Super Gas Agency in Kondapur, Hyderabad. Call +91 9652009647 or WhatsApp for prompt SUPERGAS cylinder booking, gas delivery, and stove repairs.',
   keywords: [
-    'Contact Gas Agency in Kondapur',
-    'Gas Agency in Kondapur',
-    'Gas Agency in Kodapur',
-    'Super Gas Agency in Kondapur',
-    'SUPERGAS Agency Kondapur Hyderabad',
+    'Contact SUPERGAS Agency Kondapur',
+    'Super Gas Agencies in Kondapur',
+    'SUPERGAS Agency in Kondapur, Hyderabad',
+    'SUPERGAS Gas Agency Kondapur',
     'SUPERGAS Cylinder Booking in Kondapur',
+    'SUPERGAS Gas Delivery in Kondapur',
+    'SUPERGAS Agency Near Me',
     'Sri Mahalakshmi Super Gas Agency phone number',
   ],
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
-    title: 'Contact Super Gas Agency Kondapur | Gas Agency Hyderabad',
+    title: 'Contact SUPERGAS Agency Kondapur | Gas Agency Hyderabad',
     description:
-      'Contact Sri Mahalakshmi Super Gas Agency in Kondapur, Hyderabad. Call +91 9652009647 or WhatsApp for prompt SUPERGAS cylinder booking, refills, and stove repairs.',
+      'Contact Sri Mahalakshmi Super Gas Agency in Kondapur, Hyderabad. Call +91 9652009647 or WhatsApp for prompt SUPERGAS cylinder booking, gas delivery, and stove repairs.',
     url: '/contact',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Super Gas Agency Kondapur | Gas Agency Hyderabad',
+    title: 'Contact SUPERGAS Agency Kondapur | Gas Agency Hyderabad',
     description:
-      'Contact Sri Mahalakshmi Super Gas Agency in Kondapur, Hyderabad. Call +91 9652009647 or WhatsApp for prompt SUPERGAS cylinder booking, refills, and stove repairs.',
+      'Contact Sri Mahalakshmi Super Gas Agency in Kondapur, Hyderabad. Call +91 9652009647 or WhatsApp for prompt SUPERGAS cylinder booking, gas delivery, and stove repairs.',
   },
 };
 
