@@ -126,7 +126,7 @@ export const BUSINESS_DATA: BusinessContact = {
   primaryPhoneTel: 'tel:+919652009647',
   whatsAppNumber: '919652009647',
   whatsAppBaseUrl: 'https://wa.me/919652009647',
-  mapsShareUrl: 'https://share.google/nGHiENHQo2weJcChe',
+  mapsShareUrl: 'https://share.google/I3kH1FzumhRJKcp9k',
   shopTimings: '7:00 AM – 10:00 PM (Monday to Sunday, 7 days open)',
   deliveryCoverage: 'Within 5 km radius',
   addressPendingNote: 'Location available via Google Maps link. Exact building & street address available on enquiry.',

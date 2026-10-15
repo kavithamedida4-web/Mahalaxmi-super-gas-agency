@@ -14,7 +14,7 @@
 | **Storefront Brand** | Storefront photo clearly displays **SUPERGAS** | Displayed as *"Storefront: SUPERGAS"* with explicit brand presence badge | Clarify whether agency holds authorized franchise / dealership status | ⚠️ Pending Confirmation |
 | **Primary Phone** | User supplied `096520 09647`; board shows `9652009647` | Implemented across site as `+91 96520 09647` and `tel:+919652009647` | Verified against board photo | ✅ Confirmed |
 | **WhatsApp Number** | Shop board displays WhatsApp symbol beside `9652009647` | Base URL `https://wa.me/919652009647` with pre-filled enquiry parameters | Verified active receiver desk | ✅ Implemented |
-| **Location Link** | Google Maps share link: `https://share.google/nGHiENHQo2weJcChe` | "Open in Google Maps" direct link on website | Confirm exact building number, street name, and town/PIN code | 🔄 In Progress |
+| **Location Link** | Google Maps share link: `https://share.google/I3kH1FzumhRJKcp9k` | "Open in Google Maps" direct link on website | Verified Google Business Profile linked | ✅ Confirmed |
 | **Map Embed** | Share link provided | Link-only used. Embed omitted until verified Google Maps iframe src is obtained | Obtain embeddable Google Maps iframe tag if map embed is desired | ⚠️ Pending Embed Src |
 | **New Connections** | Storefront & note: *"New Connection Available"* | Dedicated service card with documentation enquiry flow | Confirm connection package options and document checklist | ⚠️ Enquiry Mode Active |
 | **Domestic Refills** | Listed in handwritten note | Dedicated service card with locality-based prefill message | Confirm area coverage, scheduling, and standard delivery timelines | ⚠️ Enquiry Mode Active |
