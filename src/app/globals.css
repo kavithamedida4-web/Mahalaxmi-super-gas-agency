@@ -1382,6 +1382,7 @@ h1, h2, h3 {
   .hero-banner-container {
     width: 100%;
     margin-top: auto;
+    margin-bottom: clamp(5.5rem, 17vh, 9rem);
   }
 
   /* Make content completely transparent (NO white card) at the bottom */
