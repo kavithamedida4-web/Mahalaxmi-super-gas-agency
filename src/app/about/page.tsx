@@ -10,14 +10,15 @@ import {
 import { HowItWorks } from '@/components/HowItWorks';
 
 export const metadata: Metadata = {
-  title: 'About Sri Mahalakshmi Super Gas Agency | Manikonda Hyderabad',
+  title: 'About Super Gas Agency | Kondapur Hyderabad',
   description:
-    'Learn about Sri Mahalakshmi Super Gas Agency serving Manikonda & Hyderabad. Authorized SUPERGAS agency for verified tare weight LPG cylinders, refills, and stove servicing.',
+    'Learn about Sri Mahalakshmi Super Gas Agency serving Kondapur & Hyderabad. Authorized SUPERGAS agency for verified tare weight LPG cylinders, refills, and stove servicing.',
   keywords: [
     'About Super Gas Agency',
-    'Super Gas Agency in Manikonda',
-    'SUPERGAS Agency Manikonda Hyderabad',
-    'SUPERGAS Cylinder Booking in Manikonda',
+    'Gas Agency in Kondapur',
+    'Gas Agency in Kodapur',
+    'Super Gas Agency in Kondapur',
+    'SUPERGAS Agency Kondapur Hyderabad',
     'Sri Mahalakshmi Super Gas Agency',
     'LPG cylinder agency Hyderabad',
   ],
@@ -25,18 +26,18 @@ export const metadata: Metadata = {
     canonical: '/about',
   },
   openGraph: {
-    title: 'About Sri Mahalakshmi Super Gas Agency | Manikonda Hyderabad',
+    title: 'About Super Gas Agency | Kondapur Hyderabad',
     description:
-      'Learn about Sri Mahalakshmi Super Gas Agency serving Manikonda & Hyderabad. Authorized SUPERGAS agency for verified tare weight LPG cylinders, refills, and stove servicing.',
+      'Learn about Sri Mahalakshmi Super Gas Agency serving Kondapur & Hyderabad. Authorized SUPERGAS agency for verified tare weight LPG cylinders, refills, and stove servicing.',
     url: '/about',
     type: 'website',
     images: ['/images/about_indian_delivery_clean.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Sri Mahalakshmi Super Gas Agency | Manikonda Hyderabad',
+    title: 'About Super Gas Agency | Kondapur Hyderabad',
     description:
-      'Learn about Sri Mahalakshmi Super Gas Agency serving Manikonda & Hyderabad. Authorized SUPERGAS agency for verified tare weight LPG cylinders, refills, and stove servicing.',
+      'Learn about Sri Mahalakshmi Super Gas Agency serving Kondapur & Hyderabad. Authorized SUPERGAS agency for verified tare weight LPG cylinders, refills, and stove servicing.',
     images: ['/images/about_indian_delivery_clean.jpg'],
   },
 };

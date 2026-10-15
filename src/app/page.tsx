@@ -11,30 +11,32 @@ import { FAQSection } from '@/components/FAQSection';
 import { FastBookingContactMap } from '@/components/FastBookingContactMap';
 
 export const metadata: Metadata = {
-  title: 'Super Gas Agency in Manikonda | SUPERGAS Agency Manikonda Hyderabad',
+  title: 'Gas Agency in Kondapur | SUPERGAS Agency Kondapur Hyderabad',
   description:
-    'Authorized Super Gas Agency in Manikonda, Hyderabad. Fast domestic & commercial SUPERGAS cylinder booking, new LPG gas connection, refill delivery & gas stove repairs.',
+    'Authorized Super Gas Agency in Kondapur, Hyderabad. Fast domestic & commercial SUPERGAS cylinder booking, new LPG gas connection, refill delivery & gas stove repairs.',
   keywords: [
-    'Super Gas Agency in Manikonda',
-    'SUPERGAS Agency Manikonda Hyderabad',
-    'SUPERGAS Cylinder Booking in Manikonda',
-    'SUPERGAS LPG Gas Agency Manikonda',
+    'Gas Agency in Kondapur',
+    'Gas Agency in Kodapur',
+    'Super Gas Agency in Kondapur',
+    'SUPERGAS Agency Kondapur Hyderabad',
+    'SUPERGAS Cylinder Booking in Kondapur',
+    'SUPERGAS LPG Gas Agency Kondapur',
+    'LPG Gas Agency in Kondapur',
     'Sri Mahalakshmi Super Gas Agency',
-    'Super Gas Agency Manikonda',
-    'SUPERGAS Manikonda',
-    'LPG cylinder booking Manikonda Hyderabad',
-    'domestic gas cylinder Manikonda',
-    'commercial LPG cylinder Manikonda',
-    'gas stove repair Manikonda',
-    'LPG gas agency Manikonda Hyderabad',
+    'Super Gas Agency Kondapur',
+    'gas cylinder booking Kondapur',
+    'domestic gas cylinder Kondapur',
+    'commercial LPG cylinder Kondapur',
+    'gas stove repair Kondapur',
+    'LPG gas agency Kondapur Hyderabad',
   ],
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Super Gas Agency in Manikonda | SUPERGAS Agency Manikonda Hyderabad',
+    title: 'Gas Agency in Kondapur | SUPERGAS Agency Kondapur Hyderabad',
     description:
-      'Authorized Super Gas Agency in Manikonda, Hyderabad. Fast domestic & commercial SUPERGAS cylinder booking, new LPG gas connection, refill delivery & gas stove repairs.',
+      'Authorized Super Gas Agency in Kondapur, Hyderabad. Fast domestic & commercial SUPERGAS cylinder booking, new LPG gas connection, refill delivery & gas stove repairs.',
     url: '/',
     siteName: 'Sri Mahalakshmi Super Gas Agency',
     locale: 'en_IN',
@@ -44,15 +46,15 @@ export const metadata: Metadata = {
         url: '/images/hero_banner.jpg',
         width: 1200,
         height: 630,
-        alt: 'Super Gas Agency in Manikonda - Sri Mahalakshmi SUPERGAS Cylinder Booking & Stove Repair',
+        alt: 'Gas Agency in Kondapur - Sri Mahalakshmi SUPERGAS Cylinder Booking & Stove Repair',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Super Gas Agency in Manikonda | SUPERGAS Agency Manikonda Hyderabad',
+    title: 'Gas Agency in Kondapur | SUPERGAS Agency Kondapur Hyderabad',
     description:
-      'Authorized Super Gas Agency in Manikonda, Hyderabad. Fast domestic & commercial SUPERGAS cylinder booking, new LPG gas connection, refill delivery & gas stove repairs.',
+      'Authorized Super Gas Agency in Kondapur, Hyderabad. Fast domestic & commercial SUPERGAS cylinder booking, new LPG gas connection, refill delivery & gas stove repairs.',
     images: ['/images/hero_banner.jpg'],
   },
 };

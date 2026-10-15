@@ -11,10 +11,13 @@ export const StructuredData: React.FC = () => {
     name: BUSINESS_DATA.name,
     legalName: BUSINESS_DATA.name,
     alternateName: [
-      'Super Gas Agency in Manikonda',
-      'SUPERGAS Agency Manikonda Hyderabad',
-      'SUPERGAS Cylinder Booking in Manikonda',
-      'SUPERGAS LPG Gas Agency Manikonda',
+      'Gas Agency in Kondapur',
+      'Gas Agency in Kodapur',
+      'Super Gas Agency in Kondapur',
+      'SUPERGAS Agency Kondapur Hyderabad',
+      'SUPERGAS Cylinder Booking in Kondapur',
+      'SUPERGAS LPG Gas Agency Kondapur',
+      'LPG Gas Agency in Kondapur',
       'Sri Mahalakshmi Super Gas Agency',
       'Mahalakshmi Super Gas Agency',
       'Sri Mahalakshmi Supergas',
@@ -29,7 +32,7 @@ export const StructuredData: React.FC = () => {
       `${baseUrl}/images/agency_counter.jpg`,
     ],
     description:
-      'Authorized SUPERGAS agency in Manikonda, Hyderabad providing domestic & commercial LPG cylinder booking, refills, new gas connections, safety accessories, and kitchen gas stove repairs.',
+      'Authorized SUPERGAS agency in Kondapur, Hyderabad providing domestic & commercial LPG cylinder booking, refills, new gas connections, safety accessories, and kitchen gas stove repairs.',
     telephone: '+91-9652009647',
     email: 'contact@srimahalakshmisupergas.com',
     priceRange: '₹₹',
@@ -68,7 +71,11 @@ export const StructuredData: React.FC = () => {
     areaServed: [
       {
         '@type': 'AdministrativeArea',
-        name: 'Manikonda',
+        name: 'Kondapur',
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Kodapur',
       },
       {
         '@type': 'City',
@@ -100,33 +107,35 @@ export const StructuredData: React.FC = () => {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'SUPERGAS Cylinder Booking in Manikonda',
+            name: 'SUPERGAS Cylinder Booking in Kondapur',
             description:
-              'Fast booking of domestic 14.2kg and commercial 19kg SUPERGAS LPG cylinder refills with verified tare weight and tamper-evident seal.',
+              'Fast booking of domestic 14.2kg and commercial 19kg SUPERGAS LPG cylinder refills in Kondapur with verified tare weight and tamper-evident seal.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'New SUPERGAS LPG Gas Connection in Manikonda',
+            name: 'New SUPERGAS LPG Gas Connection in Kondapur',
             description:
-              'Complete new domestic LPG gas connection packages with single/double cylinder, click-on safety regulator, wiremesh pipe, and doorstep installation.',
+              'Complete new domestic LPG gas connection packages in Kondapur with single/double cylinder, click-on safety regulator, wiremesh pipe, and doorstep installation.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Gas Stove Repair & Servicing in Manikonda',
+            name: 'Gas Stove Repair & Servicing in Kondapur',
             description:
-              'Expert doorstep gas stove repair, low flame fixing, burner cleaning, and leak testing with transparent ₹200 technician visit charge.',
+              'Expert doorstep gas stove repair in Kondapur, low flame fixing, burner cleaning, and leak testing with transparent ₹200 technician visit charge.',
           },
         },
       ],
     },
     knowsAbout: [
-      'Super Gas Agency in Manikonda',
+      'Gas Agency in Kondapur',
+      'Gas Agency in Kodapur',
+      'Super Gas Agency in Kondapur',
       'SUPERGAS Cylinder Booking',
       'Domestic LPG Cylinder Refill',
       'Commercial LPG Cylinders',
@@ -146,13 +155,15 @@ export const StructuredData: React.FC = () => {
     url: baseUrl,
     name: BUSINESS_DATA.name,
     alternateName: [
-      'Super Gas Agency in Manikonda',
-      'SUPERGAS Agency Manikonda Hyderabad',
-      'SUPERGAS Cylinder Booking in Manikonda',
+      'Gas Agency in Kondapur',
+      'Gas Agency in Kodapur',
+      'Super Gas Agency in Kondapur',
+      'SUPERGAS Agency Kondapur Hyderabad',
+      'SUPERGAS Cylinder Booking in Kondapur',
       'Sri Mahalakshmi Super Gas Agency',
     ],
     description:
-      'Authorized Super Gas Agency in Manikonda, Hyderabad. Fast domestic & commercial SUPERGAS cylinder booking, new LPG gas connections, and stove servicing portal.',
+      'Authorized Super Gas Agency in Kondapur, Hyderabad. Fast domestic & commercial SUPERGAS cylinder booking, new LPG gas connections, and stove servicing portal.',
     publisher: {
       '@id': `${baseUrl}/#localbusiness`,
     },
@@ -165,18 +176,18 @@ export const StructuredData: React.FC = () => {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'How do I apply for a new domestic cooking gas connection in Manikonda?',
+        name: 'How do I apply for a new domestic cooking gas connection in Kondapur?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Connect with our agency desk via WhatsApp or phone (+91 96520 09647) with your ID proof (Aadhaar / Voter ID) and address proof. We guide you through domestic LPG allotment, genuine cylinder issuance, certified regulator setup, and initial stove inspection.',
+          text: 'Connect with our agency desk via WhatsApp or phone (+91 96520 09647) with your ID proof (Aadhaar / Voter ID) and address proof. We guide you through domestic LPG allotment, genuine cylinder issuance, certified regulator setup, and initial stove inspection in Kondapur.',
         },
       },
       {
         '@type': 'Question',
-        name: 'How can I book a SUPERGAS cylinder refill and check delivery timing in Manikonda?',
+        name: 'How can I book a SUPERGAS cylinder refill and check delivery timing in Kondapur?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Simply share your locality and consumer details with our agency desk (+91 96520 09647). We verify stock availability promptly and coordinate doorstep delivery to your home without automated interactive voice response delays.',
+          text: 'Simply share your locality and consumer details with our agency desk (+91 96520 09647). We verify stock availability promptly and coordinate doorstep delivery to your home in Kondapur without automated interactive voice response delays.',
         },
       },
       {
@@ -189,10 +200,10 @@ export const StructuredData: React.FC = () => {
       },
       {
         '@type': 'Question',
-        name: 'Do you offer doorstep gas stove repair and flame maintenance in Manikonda?',
+        name: 'Do you offer doorstep gas stove repair and flame maintenance in Kondapur?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes! We repair common issues such as low or yellow flame, burner carbon clogging, loose control knobs, and gas leakage with a transparent ₹200 visit charge. Share your stove model and issue over WhatsApp to schedule an on-site technician visit.',
+          text: 'Yes! We repair common issues such as low or yellow flame, burner carbon clogging, loose control knobs, and gas leakage with a transparent ₹200 visit charge in Kondapur. Share your stove model and issue over WhatsApp to schedule an on-site technician visit.',
         },
       },
       {

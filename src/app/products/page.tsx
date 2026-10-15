@@ -17,34 +17,35 @@ import {
 import { ProductsCatalogClient } from './ProductsCatalogClient';
 
 export const metadata: Metadata = {
-  title: 'LPG Stoves & Supergas Accessories in Manikonda Hyderabad',
+  title: 'LPG Stoves & Supergas Accessories in Kondapur Hyderabad',
   description:
-    'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery across Manikonda, Hyderabad.',
+    'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery across Kondapur, Hyderabad.',
   keywords: [
-    'LPG Stoves Manikonda',
-    'Super Gas Agency in Manikonda',
-    'SUPERGAS Agency Manikonda Hyderabad',
-    'SUPERGAS Cylinder Booking in Manikonda',
+    'LPG Stoves Kondapur',
+    'Gas Agency in Kondapur',
+    'Gas Agency in Kodapur',
+    'Super Gas Agency in Kondapur',
+    'SUPERGAS Agency Kondapur Hyderabad',
     'Supergas click-on regulators Hyderabad',
-    'gas stove spare parts Manikonda',
+    'gas stove spare parts Kondapur',
     'Sri Mahalakshmi Super Gas',
   ],
   alternates: {
     canonical: '/products',
   },
   openGraph: {
-    title: 'LPG Stoves & Supergas Accessories in Manikonda Hyderabad',
+    title: 'LPG Stoves & Supergas Accessories in Kondapur Hyderabad',
     description:
-      'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery across Manikonda, Hyderabad.',
+      'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery across Kondapur, Hyderabad.',
     url: '/products',
     type: 'website',
     images: ['/images/stove.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LPG Stoves & Supergas Accessories in Manikonda Hyderabad',
+    title: 'LPG Stoves & Supergas Accessories in Kondapur Hyderabad',
     description:
-      'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery across Manikonda, Hyderabad.',
+      'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery across Kondapur, Hyderabad.',
     images: ['/images/stove.jpg'],
   },
 };
