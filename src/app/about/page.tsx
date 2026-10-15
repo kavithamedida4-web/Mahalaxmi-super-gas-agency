@@ -10,25 +10,33 @@ import {
 import { HowItWorks } from '@/components/HowItWorks';
 
 export const metadata: Metadata = {
-  title: 'About Sri Mahalakshmi Super Gas Agency | LPG Agency',
+  title: 'About Sri Mahalakshmi Super Gas Agency | Manikonda Hyderabad',
   description:
-    'Learn about Sri Mahalakshmi Super Gas Agency in Gollaprolu. Authorized Supergas agency for verified weight LPG cylinders, refills, and stove servicing.',
+    'Learn about Sri Mahalakshmi Super Gas Agency serving Manikonda & Hyderabad. Authorized SUPERGAS agency for verified tare weight LPG cylinders, refills, and stove servicing.',
+  keywords: [
+    'About Super Gas Agency',
+    'Super Gas Agency in Manikonda',
+    'SUPERGAS Agency Manikonda Hyderabad',
+    'SUPERGAS Cylinder Booking in Manikonda',
+    'Sri Mahalakshmi Super Gas Agency',
+    'LPG cylinder agency Hyderabad',
+  ],
   alternates: {
     canonical: '/about',
   },
   openGraph: {
-    title: 'About Sri Mahalakshmi Super Gas Agency | LPG Agency',
+    title: 'About Sri Mahalakshmi Super Gas Agency | Manikonda Hyderabad',
     description:
-      'Learn about Sri Mahalakshmi Super Gas Agency in Gollaprolu. Authorized Supergas agency for verified weight LPG cylinders, refills, and stove servicing.',
+      'Learn about Sri Mahalakshmi Super Gas Agency serving Manikonda & Hyderabad. Authorized SUPERGAS agency for verified tare weight LPG cylinders, refills, and stove servicing.',
     url: '/about',
     type: 'website',
     images: ['/images/about_indian_delivery_clean.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Sri Mahalakshmi Super Gas Agency | LPG Agency',
+    title: 'About Sri Mahalakshmi Super Gas Agency | Manikonda Hyderabad',
     description:
-      'Learn about Sri Mahalakshmi Super Gas Agency in Gollaprolu. Authorized Supergas agency for verified weight LPG cylinders, refills, and stove servicing.',
+      'Learn about Sri Mahalakshmi Super Gas Agency serving Manikonda & Hyderabad. Authorized SUPERGAS agency for verified tare weight LPG cylinders, refills, and stove servicing.',
     images: ['/images/about_indian_delivery_clean.jpg'],
   },
 };

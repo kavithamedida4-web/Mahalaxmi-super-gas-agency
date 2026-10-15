@@ -12,21 +12,27 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mahalaxmi-super-gas
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Sri Mahalakshmi Super Gas Agency | LPG Cylinder Booking',
+  title: {
+    default: 'Super Gas Agency in Manikonda | SUPERGAS Agency Manikonda Hyderabad',
+    template: '%s | Sri Mahalakshmi Super Gas Agency',
+  },
   description:
-    'Sri Mahalakshmi Super Gas Agency: Fast domestic & commercial LPG cylinder delivery, new gas connections, and stove repairs within 5 km. Contact us.',
+    'Authorized Super Gas Agency in Manikonda, Hyderabad. Fast domestic & commercial SUPERGAS cylinder booking, new LPG gas connection, refill delivery & stove repairs.',
   keywords: [
+    'Super Gas Agency in Manikonda',
+    'SUPERGAS Agency Manikonda Hyderabad',
+    'SUPERGAS Cylinder Booking in Manikonda',
+    'SUPERGAS LPG Gas Agency Manikonda',
     'Sri Mahalakshmi Super Gas Agency',
     'Mahalakshmi Super Gas Agency',
-    'LPG gas agency',
-    'Gas cylinder booking',
-    'Domestic LPG cylinder',
-    'Commercial LPG cylinder',
+    'Super Gas Agency Manikonda',
+    'LPG cylinder booking Manikonda',
+    'Domestic LPG cylinder Manikonda',
+    'Commercial LPG cylinder Manikonda',
     'supergas agency',
-    'gas stove repair',
-    'cylinder refill',
-    'new gas connection',
-    'Gollaprolu gas agency',
+    'gas stove repair Manikonda',
+    'cylinder refill Manikonda',
+    'new gas connection Manikonda',
   ],
   authors: [{ name: BUSINESS_DATA.name }],
   alternates: {
@@ -44,9 +50,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Sri Mahalakshmi Super Gas Agency | LPG Cylinder Booking',
+    title: 'Super Gas Agency in Manikonda | SUPERGAS Agency Manikonda Hyderabad',
     description:
-      'Sri Mahalakshmi Super Gas Agency: Fast domestic & commercial LPG cylinder delivery, new gas connections, and stove repairs within 5 km. Contact us.',
+      'Authorized Super Gas Agency in Manikonda, Hyderabad. Fast domestic & commercial SUPERGAS cylinder booking, new LPG gas connection, refill delivery & stove repairs.',
     url: siteUrl,
     siteName: 'Sri Mahalakshmi Super Gas Agency',
     locale: 'en_IN',
@@ -56,15 +62,15 @@ export const metadata: Metadata = {
         url: '/images/hero_banner.jpg',
         width: 1200,
         height: 630,
-        alt: 'Sri Mahalakshmi Super Gas Agency - Gas Cylinders & Stove Servicing',
+        alt: 'Super Gas Agency in Manikonda - Sri Mahalakshmi SUPERGAS Agency Hyderabad',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sri Mahalakshmi Super Gas Agency | LPG Cylinder Booking',
+    title: 'Super Gas Agency in Manikonda | SUPERGAS Agency Manikonda Hyderabad',
     description:
-      'Sri Mahalakshmi Super Gas Agency: Fast domestic & commercial LPG cylinder delivery, new gas connections, and stove repairs within 5 km. Contact us.',
+      'Authorized Super Gas Agency in Manikonda, Hyderabad. Fast domestic & commercial SUPERGAS cylinder booking, new LPG gas connection, refill delivery & stove repairs.',
     images: ['/images/hero_banner.jpg'],
   },
   icons: {

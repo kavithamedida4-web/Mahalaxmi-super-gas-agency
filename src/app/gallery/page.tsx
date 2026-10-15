@@ -4,25 +4,32 @@ import { GalleryPageClient } from './GalleryPageClient';
 import { BUSINESS_DATA } from '@/config/businessData';
 
 export const metadata: Metadata = {
-  title: 'Store & Service Gallery | Sri Mahalakshmi Super Gas',
+  title: 'Super Gas Agency Operations & Service Gallery | Manikonda',
   description:
-    'Browse photos of agency operations, verified domestic & commercial LPG cylinders, safety regulators, stoves, and workbench at Sri Mahalakshmi Super Gas.',
+    'Browse photos of SUPERGAS agency operations, verified domestic & commercial LPG cylinders, safety regulators, stoves, and workbench in Manikonda, Hyderabad.',
+  keywords: [
+    'Super Gas Agency Gallery',
+    'Super Gas Agency in Manikonda',
+    'SUPERGAS Agency Manikonda Hyderabad',
+    'SUPERGAS Cylinder Booking in Manikonda',
+    'LPG cylinders photos Hyderabad',
+  ],
   alternates: {
     canonical: '/gallery',
   },
   openGraph: {
-    title: 'Store & Service Gallery | Sri Mahalakshmi Super Gas',
+    title: 'Super Gas Agency Operations & Service Gallery | Manikonda',
     description:
-      'Browse photos of agency operations, verified domestic & commercial LPG cylinders, safety regulators, stoves, and workbench at Sri Mahalakshmi Super Gas.',
+      'Browse photos of SUPERGAS agency operations, verified domestic & commercial LPG cylinders, safety regulators, stoves, and workbench in Manikonda, Hyderabad.',
     url: '/gallery',
     type: 'website',
     images: ['/images/agency_counter.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Store & Service Gallery | Sri Mahalakshmi Super Gas',
+    title: 'Super Gas Agency Operations & Service Gallery | Manikonda',
     description:
-      'Browse photos of agency operations, verified domestic & commercial LPG cylinders, safety regulators, stoves, and workbench at Sri Mahalakshmi Super Gas.',
+      'Browse photos of SUPERGAS agency operations, verified domestic & commercial LPG cylinders, safety regulators, stoves, and workbench in Manikonda, Hyderabad.',
     images: ['/images/agency_counter.jpg'],
   },
 };

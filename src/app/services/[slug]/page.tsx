@@ -50,24 +50,49 @@ export function generateStaticParams() {
   }));
 }
 
-const SERVICE_SEO: Record<string, { title: string; description: string; image: string }> = {
+const SERVICE_SEO: Record<string, { title: string; description: string; image: string; keywords: string[] }> = {
   'new-connection': {
-    title: 'New Gas Connection | Sri Mahalakshmi Super Gas Agency',
+    title: 'SUPERGAS LPG Gas Agency Manikonda | New Gas Connection Hyderabad',
     description:
-      'Apply for new single & double cylinder LPG connections with regulator and safety hose pipe from Sri Mahalakshmi Super Gas Agency. Fast doorstep delivery.',
+      'Apply for new domestic SUPERGAS LPG connection in Manikonda, Hyderabad. Single & double cylinder packages with safety regulator, wiremesh hose, and prompt doorstep setup.',
     image: '/images/services_brandblitz_new_connection.jpg',
+    keywords: [
+      'SUPERGAS LPG Gas Agency Manikonda',
+      'Super Gas Agency in Manikonda',
+      'SUPERGAS Agency Manikonda Hyderabad',
+      'new gas connection Manikonda',
+      'domestic LPG connection Manikonda',
+      'Sri Mahalakshmi Super Gas Agency',
+    ],
   },
   'cylinder-refill': {
-    title: 'LPG Cylinder Refill | Sri Mahalakshmi Super Gas Agency',
+    title: 'SUPERGAS Cylinder Booking in Manikonda | LPG Refills Hyderabad',
     description:
-      'Book genuine 14.2kg domestic & 19kg commercial LPG cylinder refills with tamper-evident seals and verified tare weight from Sri Mahalakshmi Super Gas.',
+      'Fast & reliable SUPERGAS cylinder booking in Manikonda, Hyderabad. Domestic 14.2kg & commercial 19kg LPG cylinder refills with tamper-evident seals & verified tare weight.',
     image: '/images/refill_domestic_14kg.jpg',
+    keywords: [
+      'SUPERGAS Cylinder Booking in Manikonda',
+      'Super Gas Agency in Manikonda',
+      'SUPERGAS Agency Manikonda Hyderabad',
+      'SUPERGAS LPG Gas Agency Manikonda',
+      'LPG cylinder refill Manikonda',
+      'commercial gas cylinder Manikonda',
+      'Sri Mahalakshmi Super Gas Agency',
+    ],
   },
   'stove-repair': {
-    title: 'Gas Stove Repair & Service | Sri Mahalakshmi Super Gas',
+    title: 'Gas Stove Repair in Manikonda | Doorstep Service ₹200 Visit',
     description:
-      'Doorstep gas stove repair & servicing in Gollaprolu with transparent ₹200 visit charge. Expert burner cleaning, leak detection, and genuine spare parts.',
+      'Doorstep gas stove repair & servicing in Manikonda, Hyderabad with transparent ₹200 visit charge. Expert burner cleaning, leak detection, and genuine spare parts.',
     image: '/images/indian_stove_repair_clean.jpg',
+    keywords: [
+      'gas stove repair Manikonda',
+      'stove servicing Manikonda',
+      'Super Gas Agency in Manikonda',
+      'SUPERGAS Agency Manikonda Hyderabad',
+      'gas leak repair Manikonda',
+      'Sri Mahalakshmi Super Gas Agency',
+    ],
   },
 };
 
@@ -89,11 +114,18 @@ export async function generateMetadata({
     title: `${service.title} | Sri Mahalakshmi Super Gas`,
     description: `${service.subtitle}. Explore requirements and enquiry options for ${service.title} at Sri Mahalakshmi Super Gas Agency.`,
     image: service.image,
+    keywords: [
+      service.title,
+      'Super Gas Agency in Manikonda',
+      'SUPERGAS Agency Manikonda Hyderabad',
+      'Sri Mahalakshmi Super Gas Agency',
+    ],
   };
 
   return {
     title: seo.title,
     description: seo.description,
+    keywords: seo.keywords,
     alternates: {
       canonical: `/services/${slug}`,
     },

@@ -17,25 +17,34 @@ import {
 import { ProductsCatalogClient } from './ProductsCatalogClient';
 
 export const metadata: Metadata = {
-  title: 'LPG Stoves & Spare Parts | Sri Mahalakshmi Super Gas',
+  title: 'LPG Stoves & Supergas Accessories in Manikonda Hyderabad',
   description:
-    'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery from Sri Mahalakshmi Super Gas.',
+    'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery across Manikonda, Hyderabad.',
+  keywords: [
+    'LPG Stoves Manikonda',
+    'Super Gas Agency in Manikonda',
+    'SUPERGAS Agency Manikonda Hyderabad',
+    'SUPERGAS Cylinder Booking in Manikonda',
+    'Supergas click-on regulators Hyderabad',
+    'gas stove spare parts Manikonda',
+    'Sri Mahalakshmi Super Gas',
+  ],
   alternates: {
     canonical: '/products',
   },
   openGraph: {
-    title: 'LPG Stoves & Spare Parts | Sri Mahalakshmi Super Gas',
+    title: 'LPG Stoves & Supergas Accessories in Manikonda Hyderabad',
     description:
-      'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery from Sri Mahalakshmi Super Gas.',
+      'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery across Manikonda, Hyderabad.',
     url: '/products',
     type: 'website',
     images: ['/images/stove.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LPG Stoves & Spare Parts | Sri Mahalakshmi Super Gas',
+    title: 'LPG Stoves & Supergas Accessories in Manikonda Hyderabad',
     description:
-      'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery from Sri Mahalakshmi Super Gas.',
+      'Shop genuine gas stoves, Supergas click-on regulators, wiremesh safety pipes, and brass burners with fast doorstep delivery across Manikonda, Hyderabad.',
     images: ['/images/stove.jpg'],
   },
 };
