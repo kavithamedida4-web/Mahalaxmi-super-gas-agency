@@ -26,49 +26,57 @@ const SERVICE_GALLERIES: Record<string, ServiceGalleryData> = {
     badge: 'New Connection Showcase',
     title: 'Our Connection & Installation Gallery',
     description:
-      'Take a look at our authorized domestic cylinders, toughened glass stoves, certified accessories, and doorstep setup in Kondapur, Hyderabad.',
+      'Take a look at our authorized domestic cylinders, storefront desk, verified delivery fleet, and doorstep setup in Kondapur, Hyderabad.',
     leftItems: [
       {
         id: 'nc-1',
-        title: 'Complete Domestic Connection Setup',
-        category: 'New Connection Kit',
-        image: '/images/services_brandblitz_new_connection.jpg',
+        title: 'Authorized SUPERGAS Agency Storefront',
+        category: 'Walk-In Booking Desk',
+        image: '/images/gallery_supergas_storefront.jpg',
         description:
-          'Authorized Supergas domestic cylinder package bundled with a gas stove, certified regulator, safety rubber pipe, and spark lighter.',
+          'Official Sri Mahalakshmi SUPERGAS agency storefront with walk-in customer booking desk and new connection support in Kondapur.',
       },
       {
         id: 'nc-2',
-        title: 'Double Cylinder (DBC) Package',
-        category: 'Dual Cylinder Set',
-        image: '/images/double_cylinder.jpg',
+        title: 'Express Doorstep Connection Delivery',
+        category: 'Doorstep Handover',
+        image: '/images/gallery_delivery_rider_bike.jpg',
         description:
-          'Continuous dual-cylinder backup setup ensuring uninterrupted daily cooking for busy families without refill wait delays.',
+          'Dedicated delivery technician on TVS XL moped delivering new domestic cylinders and connection kit directly to customer homes.',
+      },
+      {
+        id: 'nc-3',
+        title: 'Genuine Sealed Cylinder Delivery in Action',
+        category: 'Prompt Delivery Fleet',
+        image: '/images/gallery_cylinder_delivery_action.jpg',
+        description:
+          'Doorstep delivery executive carrying factory-sealed cylinders for prompt new domestic installation in Kondapur.',
       },
     ],
     rightItems: [
       {
-        id: 'nc-3',
-        title: 'Toughened Glass & Steel Cooktops',
-        category: 'Gas Stoves Included',
-        image: '/images/stove.jpg',
-        description:
-          'High-thermal efficiency 2-burner and 3-burner gas stoves with solid brass burners, provided directly with new connection packages.',
-      },
-      {
         id: 'nc-4',
-        title: 'Certified Safety Regulator & Wiremesh Hose',
-        category: 'Safety Accessories',
-        image: '/images/accessories.jpg',
+        title: 'Official SUPERGAS Signboard & Booking Desk',
+        category: 'Official Agency Desk',
+        image: '/images/gallery_supergas_signboard.jpg',
         description:
-          'Heavy-duty rat-bite resistant steel-wire reinforced safety hose paired with an original Supergas authorized snap-on regulator.',
+          'Official authorized agency board displaying new connections and booking hotlines: 9652009647 / 7993009647.',
       },
       {
         id: 'nc-5',
-        title: 'Doorstep Installation & Safety Demo',
-        category: 'Doorstep Setup',
+        title: 'Verified Delivery Executive & Cylinders',
+        category: 'Safety & Verification',
+        image: '/images/gallery_delivery_executive_front.jpg',
+        description:
+          'Trained delivery personnel equipped with certified domestic cylinders for prompt doorstep handoff and safety setup.',
+      },
+      {
+        id: 'nc-6',
+        title: 'Doorstep Installation & Safety Demo Fleet',
+        category: 'Dispatch Ready Fleet',
         image: '/images/gallery_delivery_bike_dispatch.jpg',
         description:
-          'Certified delivery technician mounts the regulator, conducts thorough joint leak checks, and demonstrates safe flame ignition.',
+          'Certified delivery fleet equipped to mount the regulator, conduct joint leak checks, and demonstrate safe flame ignition.',
       },
     ],
   },
@@ -77,7 +85,7 @@ const SERVICE_GALLERIES: Record<string, ServiceGalleryData> = {
     badge: 'Cylinder Refill Showcase',
     title: 'Refill Delivery & Verification Gallery',
     description:
-      'Take a look at our tamper-evident sealed cylinders, digital tare weight verification, and doorstep delivery service across Kondapur, Hyderabad.',
+      'Take a look at our authentic on-road cylinder delivery fleet, verified delivery executives, and doorstep service across Kondapur, Hyderabad.',
     leftItems: [
       {
         id: 'rf-1',
@@ -89,16 +97,24 @@ const SERVICE_GALLERIES: Record<string, ServiceGalleryData> = {
       },
       {
         id: 'rf-2',
-        title: '14.2kg Refill with Tamper-Proof Seal',
-        category: 'Domestic 14.2kg',
-        image: '/images/refill_domestic_14kg.jpg',
+        title: 'Express Doorstep Moped Delivery in Transit',
+        category: 'On-Road Delivery Fleet',
+        image: '/images/gallery_delivery_rider_bike.jpg',
         description:
-          '100% genuine Supergas cylinder with intact holographic safety security seal and protective valve safety cap.',
+          'Authentic delivery executive on TVS XL moped transporting dual domestic LPG cylinders for prompt doorstep refill delivery.',
+      },
+      {
+        id: 'rf-3',
+        title: 'Authorized SUPERGAS Distribution Hub',
+        category: 'Agency Storefront',
+        image: '/images/gallery_supergas_storefront.jpg',
+        description:
+          'Sri Mahalakshmi SUPERGAS authorized agency storefront with walk-in customer booking desk and cylinder distribution in Kondapur.',
       },
     ],
     rightItems: [
       {
-        id: 'rf-3',
+        id: 'rf-4',
         title: 'Doorstep Digital Tare Weight Check',
         category: 'Weight Verification',
         image: '/images/gallery_delivery_executive_front.jpg',
@@ -106,20 +122,20 @@ const SERVICE_GALLERIES: Record<string, ServiceGalleryData> = {
           'Every refill cylinder is verified on calibrated digital weighing scales at your doorstep to guarantee 100% accurate net cooking gas.',
       },
       {
-        id: 'rf-4',
-        title: '19kg Commercial High-Volume Cylinders',
-        category: 'Commercial Supply',
-        image: '/images/refill_commercial_19kg.jpg',
+        id: 'rf-5',
+        title: 'Rapid Cylinder Delivery Fleet in Transit',
+        category: 'Express Dispatch Fleet',
+        image: '/images/gallery_delivery_bike_dispatch.jpg',
         description:
-          'Heavy-duty cylinders dispatched on priority for restaurants, hotels, catering kitchens, and outdoor food businesses.',
+          'Express LPG cylinder refill delivery vehicle ready for dispatch to homes and commercial kitchens across Kondapur.',
       },
       {
-        id: 'rf-5',
-        title: '5kg Portable Mini Cylinder Refill',
-        category: 'Compact 5kg',
-        image: '/images/refill_mini_5kg.jpg',
+        id: 'rf-6',
+        title: 'Official SUPERGAS Signboard & Contact Hotline',
+        category: 'Booking Hotlines',
+        image: '/images/gallery_supergas_signboard.jpg',
         description:
-          'Lightweight easy-to-carry mini cylinders ideal for single professionals, bachelor rooms, students, and emergency backups.',
+          'Authorized Sri Mahalakshmi SUPERGAS helpdesk and refill booking contact board: 9652009647 / 7993009647.',
       },
     ],
   },
@@ -128,49 +144,57 @@ const SERVICE_GALLERIES: Record<string, ServiceGalleryData> = {
     badge: 'Stove Repair Showcase',
     title: 'Stove Repair & Servicing Gallery',
     description:
-      'Take a look at our technician doorstep repairs, burner carbon cleaning, genuine spare parts, and flame calibration work.',
+      'Take a look at our authentic agency repair counter, verified doorstep service technician, express dispatch fleet, and prompt servicing across Kondapur.',
     leftItems: [
       {
         id: 'sr-1',
-        title: 'Doorstep Diagnostic Visit & Inspection',
-        category: 'Fixed ₹200 Visit',
-        image: '/images/indian_stove_repair_clean.jpg',
+        title: 'Authorized SUPERGAS Service & Booking Counter',
+        category: 'Walk-In Service Desk',
+        image: '/images/gallery_supergas_storefront.jpg',
         description:
-          'Skilled gas stove technician inspects gas pressure, burner ports, and ignition switches at your kitchen platform.',
+          'Official Sri Mahalakshmi SUPERGAS agency storefront with walk-in repair drop-off, stove servicing assistance, and booking desk in Kondapur.',
       },
       {
         id: 'sr-2',
-        title: 'Burner Dismantling & Carbon Cleaning',
-        category: 'Burner Servicing',
-        image: '/images/subservice_burner_cleaning_v2.jpg',
+        title: 'Verified Doorstep Service Executive',
+        category: 'Trained Technician',
+        image: '/images/gallery_delivery_executive_front.jpg',
         description:
-          'Thorough clearing of stubborn food grease and carbon build-up from burner ports to restore full heating and stop black cookware soot.',
+          'Trained agency service personnel equipped for kitchen platform visits, burner unclogging, valve maintenance, and leak testing.',
+      },
+      {
+        id: 'sr-3',
+        title: 'Express Doorstep Service Technician Fleet',
+        category: 'Rapid Mobile Transit',
+        image: '/images/gallery_delivery_rider_bike.jpg',
+        description:
+          'Dedicated technician on TVS XL moped for speedy doorstep kitchen visits, low flame repair, and emergency gas servicing across Kondapur.',
       },
     ],
     rightItems: [
       {
-        id: 'sr-3',
-        title: 'Original Brass Jet Pins & Switch Knobs',
-        category: 'Genuine Spare Parts',
-        image: '/images/subservice_knob_repair_v2.jpg',
-        description:
-          'In-stock replacement parts including solid brass jets, heat-resistant rotary switch knobs, pan supports, and rubber washers.',
-      },
-      {
         id: 'sr-4',
-        title: 'Air-Gas Ratio & Venturi Calibration',
-        category: 'Blue Flame Calibration',
-        image: '/images/subservice_low_flame_v2.jpg',
+        title: 'Official Authorized Agency Board & Service Hotline',
+        category: 'Direct Helpdesk',
+        image: '/images/gallery_supergas_signboard.jpg',
         description:
-          'Precision jet calibration and air-mix tuning to achieve maximum cooking heat, eliminating yellow flame and fuel waste.',
+          'Official authorized agency board displaying direct service hotlines: 9652009647 / 7993009647 for instant ₹200 technician booking.',
       },
       {
         id: 'sr-5',
-        title: 'Comprehensive Gas Leak Safety Audit',
-        category: 'Safety Leak Check',
-        image: '/images/subservice_gas_leak_v2.jpg',
+        title: 'Rapid Service Dispatch Vehicle & Toolkit',
+        category: 'Express Dispatch',
+        image: '/images/gallery_delivery_bike_dispatch.jpg',
         description:
-          'Regulator O-ring inspection, hose degradation check, and soapy solution leak test across all joints for complete family peace of mind.',
+          'Express doorstep servicing vehicle equipped with genuine brass spares, jet pins, and calibrated joint leak testing tools.',
+      },
+      {
+        id: 'sr-6',
+        title: 'Doorstep Safety Inspection & Installation Fleet',
+        category: 'On-Site Safety Work',
+        image: '/images/gallery_cylinder_delivery_action.jpg',
+        description:
+          'Comprehensive doorstep stove pressure checking, tare weight verification, burner soot cleaning, and safety certification.',
       },
     ],
   },

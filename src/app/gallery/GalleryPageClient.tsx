@@ -74,6 +74,14 @@ const GALLERY_ITEMS: GalleryItem[] = [
     description: 'Prompt on-demand domestic cylinder delivery to households, apartments, and commercial kitchens across Kondapur and surrounding areas.',
   },
   {
+    id: 'delivery-rider-bike',
+    image: '/images/gallery_delivery_rider_bike.jpg',
+    category: 'domestic',
+    badge: 'DOORSTEP FLEET',
+    title: 'Express Doorstep Moped Delivery in Kondapur',
+    description: 'Authentic Sri Mahalakshmi SUPERGAS delivery personnel on TVS XL moped transporting dual domestic cylinders directly to customer residences.',
+  },
+  {
     id: 'cylinder-14kg',
     image: '/images/cylinder.jpg',
     category: 'domestic',

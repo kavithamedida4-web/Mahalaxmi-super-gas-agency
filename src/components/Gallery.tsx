@@ -28,6 +28,13 @@ const GALLERY_ITEMS_LEFT: GalleryItem[] = [
     image: '/images/gallery_cylinder_delivery_action.jpg',
     description: 'Same-day doorstep LPG cylinder refill delivery across Kondapur with genuine safety seals and tare weight verification.',
   },
+  {
+    id: 'delivery-rider-bike',
+    title: 'Express Doorstep Moped Delivery in Transit',
+    category: 'Swift Delivery Fleet',
+    image: '/images/gallery_delivery_rider_bike.jpg',
+    description: 'Dedicated delivery personnel on TVS XL moped transporting genuine domestic LPG cylinders directly to homes across Kondapur.',
+  },
 ];
 
 const GALLERY_ITEMS_RIGHT: GalleryItem[] = [

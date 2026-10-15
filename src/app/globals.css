@@ -5385,18 +5385,8 @@ code {
   gap: 16px;
 }
 
-.gallery-mosaic-col-left .gallery-mosaic-item {
+.gallery-mosaic-col .gallery-mosaic-item {
   aspect-ratio: 1 / 1;
-  width: 100%;
-}
-
-.gallery-mosaic-col-right {
-  height: 100%;
-}
-
-.gallery-mosaic-col-right .gallery-mosaic-item {
-  flex: 1;
-  min-height: 0;
   width: 100%;
 }
 
